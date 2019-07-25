@@ -1,7 +1,7 @@
 {{ define "main" }}
 <main class="space all plus">
   <header>
-    <h1 class="color-d">Hi, I'm Lucas<br> I design and build function and experience on the web</h1>
+    <h1 class="color-d">Hi, I'm Lucas<br> I use creativy and a love of problems to tell the stories of data</h1>
   </header>
   <section>
     <h4 class="color-c">I love discussing, playing with and solving problems of all shape size. I am drawn to the digital space because of the speed of iteration and the seemingly infinite opportunites to do more (little mircosoft ;)). My todo list
@@ -38,10 +38,7 @@
 
     <div class="tile-wrap">
       {{ range $.Site.Data.projects_v1}}
-      <a href="https://codepen.io/LucasZapico/pen/{{.link}}" target="_blank">
-        <div style="background-image: url('https://codepen.io/LucasZapico/pen/{{.screenShot}}')">
-        </div>
-      </a>
+  
       {{ end }}
     </div>
 
