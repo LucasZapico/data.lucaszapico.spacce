@@ -2,4 +2,4 @@ baseURL = ""
 languageCode = "en-us"
 title = "Lucas Zapico Data Portfolio"
 markdown = "blackfriday"
-theme = 'luc-v1'
+theme = "luc-data-v1"
