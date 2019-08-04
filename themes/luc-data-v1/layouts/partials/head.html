@@ -7,11 +7,9 @@
     {{ end }}</title>
   {{ if .Site.Params.favicon }}
   <link rel='icon' href="{{ .Site.Params.favicon | absURL }}" />
-  <link href="https://fonts.googleapis.com/css?family=PT+Sans|Roboto+Condensed&display=swap" rel="stylesheet">
   {{ end }}
-  {{ $options := (dict "targetPath" "css/style.css" "outputStyle" "compressed" "enableSourceMap" true) }}
-  {{ $style := resources.Get "sass/styles.scss" | resources.ToCSS $options }}
-  <link rel="stylesheet" href="{{ $style.Permalink }}">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans|Roboto+Condensed&display=swap" rel="stylesheet">
+
 
 </head>
 {{ partial "mathjax_support.html" . }}
