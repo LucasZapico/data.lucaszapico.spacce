@@ -1,4 +1,4 @@
 baseURL = ""
 languageCode = "en-us"
-title = "Lucas Zapico Data Portfolio"
-theme = 'luc-v1'
+title = "My New Hugo Site"
+theme = "luc-data-v1"
