@@ -14,7 +14,9 @@
     <h3>How I solve Problems</h3>
     {{ range .Pages }}
       {{ .Title }}
+      {{ .URL }}
     {{end}}
+    {{- partial "menu-main.html" . -}}
   </section>
 </main>
 {{ end }}

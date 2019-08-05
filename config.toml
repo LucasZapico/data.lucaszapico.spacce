@@ -1,5 +1,4 @@
 baseURL = ""
 languageCode = "en-us"
-title = "Lucas Zapico Data Portfolio"
-markdown = "blackfriday"
-theme = "luc-data-v1"
+title = "Data and Lucas"
+theme  = "luc-data-v1"
