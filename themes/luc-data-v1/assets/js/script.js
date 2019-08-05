@@ -375,13 +375,13 @@ window.onload = function(){
 
       context.beginPath();
       graph.links.forEach(drawLink);
-      context.strokeStyle = "#aaa";
+      context.strokeStyle = "#293462";
       context.stroke();
 
       context.beginPath();
       graph.nodes.forEach(drawNode);
       context.fill();
-      context.strokeStyle = "#fff";
+      context.strokeStyle = "#293462";
       context.stroke();
     }
 
