@@ -1,16 +1,20 @@
 {{ define "main" }}
-<main>
-  <header>
+<main class="space all-plus">
+  <header class="space">
 
 
     <h1 class="color-c">Hi, I'm Lucas
       I use creativy and a love of problems to tell the stories of data</h1>
       <h4 class="color-d">I love discussing, playing with and solving problems of all shape size. I am drawn to the digital space because of the speed of iteration and the seemingly infinite opportunites to do more (little mircosoft ;)). My todo list
         is life long and I wouldn't have it any other way.</h4>
+      <a class="link" href="/about">More about Lucas</a>
       <canvas id="canvas" width="700" height="700"></canvas>
   </header>
   <section>
-  
+    <h3>How I solve Problems</h3>
+    {{ range .Pages }}
+      {{ .Title }}
+    {{end}}
   </section>
 </main>
 {{ end }}
