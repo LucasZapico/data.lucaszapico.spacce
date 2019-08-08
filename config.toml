@@ -2,3 +2,28 @@ baseURL = ""
 languageCode = "en-us"
 title = "Data and Lucas"
 theme  = "luc-data-v1"
+summaryLength = 40
+# Main Menu 
+
+[menu]
+
+  [[menu.main]]
+    identifier = "about"
+    name = "about"
+    url = "/about/"
+    weight = 1
+
+  [[menu.main]]
+    name = "home"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    name = "project"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    name = "cases"
+    url = "/"
+    weight = 1
