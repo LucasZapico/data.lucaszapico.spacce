@@ -1,6 +1,44 @@
 console.log("Im alive!")
 
 window.onload = function(){
+
+  var ctx = document.getElementById('radar').getContext("2d");
+
+  var myRadarChart = new Chart(ctx, {
+    type: 'radar',
+    data: {
+      labels: ['Modeling', 'Analysis', 'Three', 'Four', 'Five'],
+      datasets: [{
+        data: [ 50, 15, 20, 35, 60],
+        label: 'Test',
+        backgroundColor: "hsla(200, 36%, 39%, 0.60)",
+        borderColor: "hsla(200, 36%, 39%, 0.70)",
+        borderWidth: 3
+      }]
+    },
+    options: {
+      labels: {
+        fontSize: 18
+      },
+      legend: {
+        
+        position: 'bottom',
+      },
+      title: {
+        display: false,
+        text: 'Skills'
+      },
+      scale: {
+        ticks: {
+          type: 'category',
+          labels: ['a', 'b', 'c', 'd', 'e', 'f']
+        }
+      }
+    }
+  });
+  
+
+  // D3 Module
   var graph = {
     "nodes": [
       {"id": "Myriel", "group": 1},
