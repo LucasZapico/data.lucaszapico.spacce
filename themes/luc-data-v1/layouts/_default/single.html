@@ -10,13 +10,12 @@
       <article id="content ">
         {{ .Content }}
       </article>
-      {{ .TableOfContents }}
     </div>
 </section>
 <aside id="meta" class="column four wide segment ui">
   <div>
     <section>
-    
+        {{ .TableOfContents }} 
         <div class="sub ui header " id="date"> {{ .Date.Format "Mon Jan 2, 2006" }} </div>
         <div class="sub grey ui header " id="wordcount"> {{ .WordCount }} Words </div>
       
