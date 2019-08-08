@@ -1,5 +1,24 @@
-<footer>
-  
+<footer class="top-plus space bottom">
+  <div class="ui four columns grid container">
+    <div class="column">
+        <div class="ui vertical text menu">
+            <div class="header item">Data.Lucas</div>
+            {{ range .Site.Menus.main }}
+            <a class="item">
+              {{.Name}}
+            </a>
+            {{end}}
+          </div>
+    
+      
+    </div>
+    <div class="column">
+       
+    </div>
+    <div class="column"></div>
+    <div class="column"> <a href="https://www.linkedin.com/in/lucasmmzapico/"><i class="github large icon"></i></a>
+      <a  href="https://github.com/LucasZapico"><i class="linkedin large icon"></i></a></div>
+  </div>
 </footer>
 <script src="https://unpkg.com/ionicons@4.2.2/dist/ionicons.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
