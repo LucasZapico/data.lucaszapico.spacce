@@ -9,45 +9,34 @@
 // @import "nav.scss";
 
 body {
-  background-color: #fffefb;
+  background-color: #fafafa;
 
   a {
-    color: $colorc;
+    color: lighten($colorc,15%);
   }
+  header {
+    // h4 {
+    //   background-color: #fafafa;
+    //   border-left: solid 10rem $colorb;
+    //   border-right: solid 5rem transparent;
+    //   border-top: solid 5rem $colorb;
+    //   border-bottom: solid 9rem transparent;
+    // }
+  }
+  // radar 
+
+canvas#radar{
+  width : 500px !important; 
+  height: 500px !important;
+}
+canvas {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
 }
 
 @media screen and (min-width: 800px) {
-  header {
-    // display: flex;
-
-    h1 {
-      margin-left: 50%;
-      max-width: 50%;
-    }
-
-    h4 {
-      margin-left: 50%;
-      max-width: 50%;
-
-    }
-  }
-
-  section {
-    min-height: 70vh;
-
-    &:first-of-type {
-
-      margin-left: 50%;
-      max-width: 50%;
-    }
-
-    &:nth-of-type(4) {
-      & > div {
-        margin: auto;
-        max-width: 50%;
-
-      }
-    }
-
-  }
+  
 }
