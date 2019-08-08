@@ -4,8 +4,6 @@ date: 2019-08-04T19:00:45-07:00
 draft: false
 ---
 
-# Case One
-
 -   Data acquistion
 -   Data manipulation
 -   Data presentation
