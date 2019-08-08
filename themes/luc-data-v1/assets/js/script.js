@@ -7,16 +7,17 @@ window.onload = function(){
   var myRadarChart = new Chart(ctx, {
     type: 'radar',
     data: {
-      labels: ['Modeling', 'Analysis', 'Three', 'Four', 'Five'],
+      labels: ['Programming', 'Analysis', 'Data Visualization', 'Data Wrangliing', 'Maths'],
       datasets: [{
-        data: [ 50, 15, 20, 35, 60],
+        data: [ 70, 55, 75, 65, 80],
         label: 'Test',
-        backgroundColor: "hsla(200, 36%, 39%, 0.60)",
+        backgroundColor: "hsla(200, 36%, 39%, 0.30)",
         borderColor: "hsla(200, 36%, 39%, 0.70)",
         borderWidth: 3
       }]
     },
     options: {
+      pointLabelFontSize: 20, 
       labels: {
         fontSize: 18
       },
@@ -28,11 +29,19 @@ window.onload = function(){
         display: false,
         text: 'Skills'
       },
-      scale: {
-        ticks: {
-          type: 'category',
-          labels: ['a', 'b', 'c', 'd', 'e', 'f']
+      scales: {
+        scaleLabels: {
+          fontSize: 19
         }
+      },
+      scale: {
+        pointLabels: { fontSize: 50 },
+        ticks: {
+          min: 0,
+          max: 100,
+          stepSize: 25
+        },
+        responsive: true
       }
     }
   });
