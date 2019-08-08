@@ -14,3 +14,6 @@ After a few month I felt like I had a good handle on what our chanlenge looked l
 1. Efficinet data acquisition
 2. Effictive and dynamic data manipulation
 3. Data and result presentation in the format that our stakeholder either wanted to see or expected to see.
+
+
+## Marketing Data Coming from Multiple Sources with inconsistand attribute types
