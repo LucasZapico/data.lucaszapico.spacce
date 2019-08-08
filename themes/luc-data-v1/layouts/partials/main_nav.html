@@ -1,0 +1,15 @@
+
+
+<div class="ui top fixed menu">
+    {{/*  <div class="header item">
+   
+    </div>  */}}
+    {{ range .Site.Menus.main }}
+    <a class="item" href="{{.URL}}">
+        {{.Name}}
+    </a>
+    {{end}}
+ 
+  </div>
+
+  
