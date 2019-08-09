@@ -39,7 +39,7 @@ window.onload = function(){
         ticks: {
           min: 0,
           max: 100,
-          stepSize: 25
+          stepSize: 20
         },
         responsive: true
       }
