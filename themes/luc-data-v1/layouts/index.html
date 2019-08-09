@@ -46,16 +46,17 @@
       </div>
   </div>
   </section>
+  
   <div class="ui hidden divider"></div>
   <section class="space all-plus bg-color-a ">
     <h3 class=" peta color-grey-l space bottom-minus kill-margin">How I solve Problems</h3>
     <h4 class="color-grey-ll kill-margin space bottom">A few real world challenges and</h4>
     
     <div class="ui grid ">
-        {{ range .Pages }}
+        {{ range .Site.Taxonomies.categories.case }}
       
         <div class="eight wide column">
-            <h3 href="{{ .RelPermalink }}" class="header top attached ui"> {{ .Title }}</h3>
+            <h3  class="header h3 top attached ui"> <a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
             <div class="ui attached segment">
               <p>{{.Summary}} </p>
               {{ if .Truncated }}
@@ -69,6 +70,31 @@
           {{end}}
       </div>
     </div>
+    
+   
+
+  </section>
+  <section class="space all-plus">
+    <h3 class=" peta color-grey-mm space bottom-minus kill-margin">Writing</h3>
+    <h5 class="color-grey-m kill-margin space bottom">Thought on stuff</h4>
+
+      <div class="ui grid ">
+        {{ range .Site.Taxonomies.categories.article }}
+      
+        <div class="eight wide column">
+            <h3  class="header h3 top attached ui"> <a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+            <div class="ui attached segment">
+              <p>{{.Summary}} </p>
+              {{ if .Truncated }}
+              <!-- This <div> includes a read more link, but only if the summary is truncated... -->
+              <div>
+                <a href="{{ .RelPermalink }}">Read More…</a>
+              </div>
+              {{ end }}
+            </div>
+        </div>
+          {{end}}
+      </div>
   </section>
 </main>
 {{ end }}
