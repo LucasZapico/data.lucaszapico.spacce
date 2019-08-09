@@ -2,6 +2,7 @@
 title: "Case One"
 date: 2019-08-04T19:00:45-07:00
 draft: false
+categories: ["case"]
 ---
 
 -   Data acquistion
@@ -17,3 +18,4 @@ After a few month I felt like I had a good handle on what our chanlenge looked l
 
 
 ## Marketing Data Coming from Multiple Sources with inconsistand attribute types
+
