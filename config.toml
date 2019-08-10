@@ -5,6 +5,11 @@ theme  = "luc-data-v1"
 summaryLength = 40
 # Main Menu 
 
+[taxonomies]
+tag = "tags"
+category = "categories"
+
+
 [menu]
 
   [[menu.main]]
