@@ -35,7 +35,7 @@ window.onload = function(){
         }
       },
       scale: {
-        pointLabels: { fontSize: 50 },
+        pointLabels: { fontSize: 45 },
         ticks: {
           min: 0,
           max: 100,
