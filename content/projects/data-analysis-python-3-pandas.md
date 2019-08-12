@@ -1,0 +1,1388 @@
+---
+title: "Jyputer Data Analysis - Avocados"
+date: 2019-08-11T11:28:56-07:00
+draft: false
+categories: ["project"]
+type: "notebooks"
+---
+
+# Data Analysis Python 3 and Pandas
+
+This courses is walk through of the basic python and pandas analysis tools set. There is some small deviation from the course. But, the objective here is to show "action" rather then to show case my own code. 
+
+[Link to coursee](https://pythonprogramming.net/introduction-python3-pandas-data-analysis/)
+
+```python
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+```
+
+```python
+# Import data
+df = pd.read_csv('avocado.csv')
+```
+
+```python
+df.rename(columns=lambda x: x.strip().lower().replace(" ", "_"), inplace=True)
+```
+
+```python
+df.columns.values
+```
+
+    array(['unnamed:_0', 'date', 'averageprice', 'total_volume', '4046',
+           '4225', '4770', 'total_bags', 'small_bags', 'large_bags',
+           'xlarge_bags', 'type', 'year', 'region'], dtype=object)
+
+```python
+df['date'] = pd.to_datetime(df['date'])
+```
+
+```python
+dfa = df.set_index('date')
+```
+
+```python
+dfa.drop(axis=1, columns="unnamed:_0");
+```
+
+```python
+dfa['region'].unique()
+```
+
+    array(['Albany', 'Atlanta', 'BaltimoreWashington', 'Boise', 'Boston',
+           'BuffaloRochester', 'California', 'Charlotte', 'Chicago',
+           'CincinnatiDayton', 'Columbus', 'DallasFtWorth', 'Denver',
+           'Detroit', 'GrandRapids', 'GreatLakes', 'HarrisburgScranton',
+           'HartfordSpringfield', 'Houston', 'Indianapolis', 'Jacksonville',
+           'LasVegas', 'LosAngeles', 'Louisville', 'MiamiFtLauderdale',
+           'Midsouth', 'Nashville', 'NewOrleansMobile', 'NewYork',
+           'Northeast', 'NorthernNewEngland', 'Orlando', 'Philadelphia',
+           'PhoenixTucson', 'Pittsburgh', 'Plains', 'Portland',
+           'RaleighGreensboro', 'RichmondNorfolk', 'Roanoke', 'Sacramento',
+           'SanDiego', 'SanFrancisco', 'Seattle', 'SouthCarolina',
+           'SouthCentral', 'Southeast', 'Spokane', 'StLouis', 'Syracuse',
+           'Tampa', 'TotalUS', 'West', 'WestTexNewMexico'], dtype=object)
+
+```python
+# albany region dataframe
+df_alb = dfa[dfa.loc[:,'region']=="Albany"].copy()
+```
+
+```python
+# check
+df_alb["region"].unique()
+```
+
+    array(['Albany'], dtype=object)
+
+```python
+df_alb["averageprice"].plot()
+```
+
+    <matplotlib.axes._subplots.AxesSubplot at 0x10ab92e48>
+
+![png](/img/output_12_1.png)
+
+```python
+df_alb.sort_index(inplace=True)
+```
+
+```python
+# calculating a moving average
+df_alb["averageprice"].rolling(25).mean().plot()
+```
+
+    <matplotlib.axes._subplots.AxesSubplot at 0x1a0d134898>
+
+![png](/img/output_14_1.png)
+
+```python
+df = df[df["type"]=="organic"].copy()
+```
+
+```python
+df.sort_values("date", ascending=False)
+```
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>unnamed:_0</th>
+      <th>date</th>
+      <th>averageprice</th>
+      <th>total_volume</th>
+      <th>4046</th>
+      <th>4225</th>
+      <th>4770</th>
+      <th>total_bags</th>
+      <th>small_bags</th>
+      <th>large_bags</th>
+      <th>xlarge_bags</th>
+      <th>type</th>
+      <th>year</th>
+      <th>region</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>17865</th>
+      <td>0</td>
+      <td>2018-03-25</td>
+      <td>1.74</td>
+      <td>91739.92</td>
+      <td>11197.66</td>
+      <td>29959.26</td>
+      <td>0.00</td>
+      <td>50583.00</td>
+      <td>50420.81</td>
+      <td>162.19</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2018</td>
+      <td>LosAngeles</td>
+    </tr>
+    <tr>
+      <th>17841</th>
+      <td>0</td>
+      <td>2018-03-25</td>
+      <td>1.75</td>
+      <td>5518.73</td>
+      <td>171.22</td>
+      <td>806.65</td>
+      <td>3.93</td>
+      <td>4536.93</td>
+      <td>2944.89</td>
+      <td>1592.04</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2018</td>
+      <td>Jacksonville</td>
+    </tr>
+    <tr>
+      <th>18213</th>
+      <td>0</td>
+      <td>2018-03-25</td>
+      <td>1.55</td>
+      <td>1559967.20</td>
+      <td>121007.94</td>
+      <td>342853.10</td>
+      <td>1070.24</td>
+      <td>1093861.09</td>
+      <td>902774.79</td>
+      <td>190941.84</td>
+      <td>144.46</td>
+      <td>organic</td>
+      <td>2018</td>
+      <td>TotalUS</td>
+    </tr>
+    <tr>
+      <th>17805</th>
+      <td>0</td>
+      <td>2018-03-25</td>
+      <td>2.09</td>
+      <td>20242.65</td>
+      <td>144.40</td>
+      <td>10949.63</td>
+      <td>0.00</td>
+      <td>9148.62</td>
+      <td>9137.73</td>
+      <td>10.89</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2018</td>
+      <td>HartfordSpringfield</td>
+    </tr>
+    <tr>
+      <th>17733</th>
+      <td>0</td>
+      <td>2018-03-25</td>
+      <td>1.46</td>
+      <td>31489.27</td>
+      <td>5372.35</td>
+      <td>1047.92</td>
+      <td>0.00</td>
+      <td>25069.00</td>
+      <td>23054.17</td>
+      <td>2014.83</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2018</td>
+      <td>DallasFtWorth</td>
+    </tr>
+    <tr>
+      <th>17853</th>
+      <td>0</td>
+      <td>2018-03-25</td>
+      <td>1.65</td>
+      <td>10720.47</td>
+      <td>1541.02</td>
+      <td>1842.23</td>
+      <td>0.00</td>
+      <td>7337.22</td>
+      <td>7283.04</td>
+      <td>54.18</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2018</td>
+      <td>LasVegas</td>
+    </tr>
+    <tr>
+      <th>18105</th>
+      <td>0</td>
+      <td>2018-03-25</td>
+      <td>1.64</td>
+      <td>34687.20</td>
+      <td>10102.62</td>
+      <td>10778.96</td>
+      <td>0.00</td>
+      <td>13805.62</td>
+      <td>13802.29</td>
+      <td>3.33</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2018</td>
+      <td>SanFrancisco</td>
+    </tr>
+    <tr>
+      <th>18009</th>
+      <td>0</td>
+      <td>2018-03-25</td>
+      <td>1.38</td>
+      <td>16411.89</td>
+      <td>956.73</td>
+      <td>10.91</td>
+      <td>0.00</td>
+      <td>15444.25</td>
+      <td>15430.91</td>
+      <td>13.34</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2018</td>
+      <td>Pittsburgh</td>
+    </tr>
+    <tr>
+      <th>17745</th>
+      <td>0</td>
+      <td>2018-03-25</td>
+      <td>1.60</td>
+      <td>24825.50</td>
+      <td>6516.40</td>
+      <td>685.92</td>
+      <td>44.09</td>
+      <td>17579.09</td>
+      <td>16514.58</td>
+      <td>1064.51</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2018</td>
+      <td>Denver</td>
+    </tr>
+    <tr>
+      <th>17625</th>
+      <td>0</td>
+      <td>2018-03-25</td>
+      <td>1.33</td>
+      <td>57606.42</td>
+      <td>2002.40</td>
+      <td>5548.18</td>
+      <td>82.68</td>
+      <td>49973.16</td>
+      <td>49957.61</td>
+      <td>15.55</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2018</td>
+      <td>BaltimoreWashington</td>
+    </tr>
+    <tr>
+      <th>18153</th>
+      <td>0</td>
+      <td>2018-03-25</td>
+      <td>1.45</td>
+      <td>121917.39</td>
+      <td>1929.39</td>
+      <td>18391.86</td>
+      <td>110.05</td>
+      <td>101486.09</td>
+      <td>85313.41</td>
+      <td>16172.68</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2018</td>
+      <td>Southeast</td>
+    </tr>
+    <tr>
+      <th>18201</th>
+      <td>0</td>
+      <td>2018-03-25</td>
+      <td>1.41</td>
+      <td>10028.49</td>
+      <td>138.15</td>
+      <td>773.22</td>
+      <td>0.00</td>
+      <td>9117.12</td>
+      <td>8208.82</td>
+      <td>908.30</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2018</td>
+      <td>Tampa</td>
+    </tr>
+    <tr>
+      <th>17949</th>
+      <td>0</td>
+      <td>2018-03-25</td>
+      <td>1.58</td>
+      <td>374859.68</td>
+      <td>19823.16</td>
+      <td>58366.54</td>
+      <td>201.04</td>
+      <td>296468.94</td>
+      <td>265716.88</td>
+      <td>30752.06</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2018</td>
+      <td>Northeast</td>
+    </tr>
+    <tr>
+      <th>17997</th>
+      <td>0</td>
+      <td>2018-03-25</td>
+      <td>1.52</td>
+      <td>15372.80</td>
+      <td>2399.71</td>
+      <td>3164.80</td>
+      <td>0.00</td>
+      <td>9808.29</td>
+      <td>9789.70</td>
+      <td>18.59</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2018</td>
+      <td>PhoenixTucson</td>
+    </tr>
+    <tr>
+      <th>17757</th>
+      <td>0</td>
+      <td>2018-03-25</td>
+      <td>1.43</td>
+      <td>20507.49</td>
+      <td>687.46</td>
+      <td>2729.79</td>
+      <td>0.00</td>
+      <td>16887.00</td>
+      <td>13920.18</td>
+      <td>2966.82</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2018</td>
+      <td>Detroit</td>
+    </tr>
+    <tr>
+      <th>18081</th>
+      <td>0</td>
+      <td>2018-03-25</td>
+      <td>1.63</td>
+      <td>9608.95</td>
+      <td>1902.19</td>
+      <td>3572.34</td>
+      <td>0.00</td>
+      <td>4134.42</td>
+      <td>4124.42</td>
+      <td>10.00</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2018</td>
+      <td>Sacramento</td>
+    </tr>
+    <tr>
+      <th>17721</th>
+      <td>0</td>
+      <td>2018-03-25</td>
+      <td>1.31</td>
+      <td>11125.08</td>
+      <td>533.97</td>
+      <td>1113.33</td>
+      <td>0.00</td>
+      <td>9477.78</td>
+      <td>7760.23</td>
+      <td>1717.55</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2018</td>
+      <td>Columbus</td>
+    </tr>
+    <tr>
+      <th>17769</th>
+      <td>0</td>
+      <td>2018-03-25</td>
+      <td>1.34</td>
+      <td>8539.23</td>
+      <td>73.78</td>
+      <td>1301.09</td>
+      <td>0.00</td>
+      <td>7164.36</td>
+      <td>7162.69</td>
+      <td>1.67</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2018</td>
+      <td>GrandRapids</td>
+    </tr>
+    <tr>
+      <th>17829</th>
+      <td>0</td>
+      <td>2018-03-25</td>
+      <td>1.28</td>
+      <td>9506.07</td>
+      <td>319.39</td>
+      <td>1427.13</td>
+      <td>0.00</td>
+      <td>7685.05</td>
+      <td>3437.74</td>
+      <td>4247.31</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2018</td>
+      <td>Indianapolis</td>
+    </tr>
+    <tr>
+      <th>17961</th>
+      <td>0</td>
+      <td>2018-03-25</td>
+      <td>1.63</td>
+      <td>22596.13</td>
+      <td>9.44</td>
+      <td>257.67</td>
+      <td>0.00</td>
+      <td>22329.02</td>
+      <td>22329.02</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2018</td>
+      <td>NorthernNewEngland</td>
+    </tr>
+    <tr>
+      <th>18189</th>
+      <td>0</td>
+      <td>2018-03-25</td>
+      <td>1.04</td>
+      <td>14503.47</td>
+      <td>78.95</td>
+      <td>148.37</td>
+      <td>0.00</td>
+      <td>14276.15</td>
+      <td>9992.31</td>
+      <td>4283.84</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2018</td>
+      <td>Syracuse</td>
+    </tr>
+    <tr>
+      <th>18165</th>
+      <td>0</td>
+      <td>2018-03-25</td>
+      <td>1.59</td>
+      <td>5750.56</td>
+      <td>266.92</td>
+      <td>1707.42</td>
+      <td>2.21</td>
+      <td>3774.01</td>
+      <td>638.89</td>
+      <td>3105.71</td>
+      <td>29.41</td>
+      <td>organic</td>
+      <td>2018</td>
+      <td>Spokane</td>
+    </tr>
+    <tr>
+      <th>17781</th>
+      <td>0</td>
+      <td>2018-03-25</td>
+      <td>1.47</td>
+      <td>182492.41</td>
+      <td>5140.14</td>
+      <td>51115.63</td>
+      <td>0.00</td>
+      <td>125061.81</td>
+      <td>102033.82</td>
+      <td>23027.99</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2018</td>
+      <td>GreatLakes</td>
+    </tr>
+    <tr>
+      <th>17985</th>
+      <td>0</td>
+      <td>2018-03-25</td>
+      <td>1.49</td>
+      <td>37893.50</td>
+      <td>3464.04</td>
+      <td>5737.90</td>
+      <td>9.42</td>
+      <td>28682.14</td>
+      <td>28637.44</td>
+      <td>44.70</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2018</td>
+      <td>Philadelphia</td>
+    </tr>
+    <tr>
+      <th>17817</th>
+      <td>0</td>
+      <td>2018-03-25</td>
+      <td>1.31</td>
+      <td>36999.72</td>
+      <td>8247.81</td>
+      <td>67.33</td>
+      <td>0.00</td>
+      <td>28684.58</td>
+      <td>28094.58</td>
+      <td>590.00</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2018</td>
+      <td>Houston</td>
+    </tr>
+    <tr>
+      <th>17637</th>
+      <td>0</td>
+      <td>2018-03-25</td>
+      <td>1.81</td>
+      <td>3119.20</td>
+      <td>76.12</td>
+      <td>1006.43</td>
+      <td>0.00</td>
+      <td>2036.65</td>
+      <td>618.64</td>
+      <td>1418.01</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2018</td>
+      <td>Boise</td>
+    </tr>
+    <tr>
+      <th>17793</th>
+      <td>0</td>
+      <td>2018-03-25</td>
+      <td>1.36</td>
+      <td>23169.17</td>
+      <td>371.93</td>
+      <td>239.04</td>
+      <td>9.87</td>
+      <td>22548.33</td>
+      <td>22545.00</td>
+      <td>3.33</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2018</td>
+      <td>HarrisburgScranton</td>
+    </tr>
+    <tr>
+      <th>17973</th>
+      <td>0</td>
+      <td>2018-03-25</td>
+      <td>1.45</td>
+      <td>11040.51</td>
+      <td>209.54</td>
+      <td>1106.74</td>
+      <td>0.00</td>
+      <td>9724.23</td>
+      <td>8756.67</td>
+      <td>967.56</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2018</td>
+      <td>Orlando</td>
+    </tr>
+    <tr>
+      <th>18177</th>
+      <td>0</td>
+      <td>2018-03-25</td>
+      <td>1.82</td>
+      <td>8210.37</td>
+      <td>1426.49</td>
+      <td>2452.50</td>
+      <td>0.00</td>
+      <td>4331.38</td>
+      <td>3427.78</td>
+      <td>903.60</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2018</td>
+      <td>StLouis</td>
+    </tr>
+    <tr>
+      <th>17613</th>
+      <td>0</td>
+      <td>2018-03-25</td>
+      <td>1.56</td>
+      <td>18717.08</td>
+      <td>469.23</td>
+      <td>3942.82</td>
+      <td>0.00</td>
+      <td>14305.03</td>
+      <td>9398.45</td>
+      <td>4906.58</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2018</td>
+      <td>Atlanta</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>10373</th>
+      <td>51</td>
+      <td>2015-01-04</td>
+      <td>1.48</td>
+      <td>1395.75</td>
+      <td>12.41</td>
+      <td>824.64</td>
+      <td>0.00</td>
+      <td>558.70</td>
+      <td>478.15</td>
+      <td>80.55</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2015</td>
+      <td>Louisville</td>
+    </tr>
+    <tr>
+      <th>9697</th>
+      <td>51</td>
+      <td>2015-01-04</td>
+      <td>1.44</td>
+      <td>3930.94</td>
+      <td>358.05</td>
+      <td>2432.81</td>
+      <td>0.00</td>
+      <td>1140.08</td>
+      <td>444.17</td>
+      <td>695.91</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2015</td>
+      <td>Columbus</td>
+    </tr>
+    <tr>
+      <th>10477</th>
+      <td>51</td>
+      <td>2015-01-04</td>
+      <td>1.56</td>
+      <td>58065.35</td>
+      <td>10049.66</td>
+      <td>25228.37</td>
+      <td>3672.89</td>
+      <td>19114.43</td>
+      <td>17280.89</td>
+      <td>1833.54</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2015</td>
+      <td>Midsouth</td>
+    </tr>
+    <tr>
+      <th>9593</th>
+      <td>51</td>
+      <td>2015-01-04</td>
+      <td>1.49</td>
+      <td>17723.17</td>
+      <td>1189.35</td>
+      <td>15628.27</td>
+      <td>0.00</td>
+      <td>905.55</td>
+      <td>905.55</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2015</td>
+      <td>Chicago</td>
+    </tr>
+    <tr>
+      <th>10061</th>
+      <td>51</td>
+      <td>2015-01-04</td>
+      <td>2.32</td>
+      <td>4801.10</td>
+      <td>87.56</td>
+      <td>4364.01</td>
+      <td>0.00</td>
+      <td>349.53</td>
+      <td>349.53</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2015</td>
+      <td>HartfordSpringfield</td>
+    </tr>
+    <tr>
+      <th>11153</th>
+      <td>51</td>
+      <td>2015-01-04</td>
+      <td>1.54</td>
+      <td>4212.16</td>
+      <td>238.48</td>
+      <td>1678.83</td>
+      <td>372.55</td>
+      <td>1922.30</td>
+      <td>1570.28</td>
+      <td>352.02</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2015</td>
+      <td>RichmondNorfolk</td>
+    </tr>
+    <tr>
+      <th>9385</th>
+      <td>51</td>
+      <td>2015-01-04</td>
+      <td>1.83</td>
+      <td>2192.13</td>
+      <td>8.66</td>
+      <td>939.43</td>
+      <td>0.00</td>
+      <td>1244.04</td>
+      <td>1244.04</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2015</td>
+      <td>Boston</td>
+    </tr>
+    <tr>
+      <th>11725</th>
+      <td>51</td>
+      <td>2015-01-04</td>
+      <td>1.72</td>
+      <td>593.39</td>
+      <td>0.00</td>
+      <td>102.71</td>
+      <td>0.00</td>
+      <td>490.68</td>
+      <td>490.68</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2015</td>
+      <td>Syracuse</td>
+    </tr>
+    <tr>
+      <th>10997</th>
+      <td>51</td>
+      <td>2015-01-04</td>
+      <td>1.69</td>
+      <td>34190.37</td>
+      <td>3874.31</td>
+      <td>14945.34</td>
+      <td>32.45</td>
+      <td>15338.27</td>
+      <td>13793.22</td>
+      <td>1545.05</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2015</td>
+      <td>Plains</td>
+    </tr>
+    <tr>
+      <th>10633</th>
+      <td>51</td>
+      <td>2015-01-04</td>
+      <td>1.93</td>
+      <td>17328.24</td>
+      <td>2357.18</td>
+      <td>12692.21</td>
+      <td>9.47</td>
+      <td>2269.38</td>
+      <td>2269.38</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2015</td>
+      <td>NewYork</td>
+    </tr>
+    <tr>
+      <th>11309</th>
+      <td>51</td>
+      <td>2015-01-04</td>
+      <td>1.23</td>
+      <td>19089.36</td>
+      <td>17522.46</td>
+      <td>735.22</td>
+      <td>2.87</td>
+      <td>828.81</td>
+      <td>828.81</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2015</td>
+      <td>SanDiego</td>
+    </tr>
+    <tr>
+      <th>10269</th>
+      <td>51</td>
+      <td>2015-01-04</td>
+      <td>1.50</td>
+      <td>6329.83</td>
+      <td>3730.80</td>
+      <td>2141.91</td>
+      <td>0.00</td>
+      <td>457.12</td>
+      <td>426.67</td>
+      <td>30.45</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2015</td>
+      <td>LasVegas</td>
+    </tr>
+    <tr>
+      <th>11621</th>
+      <td>51</td>
+      <td>2015-01-04</td>
+      <td>1.30</td>
+      <td>5782.70</td>
+      <td>723.29</td>
+      <td>4221.15</td>
+      <td>0.00</td>
+      <td>838.26</td>
+      <td>223.33</td>
+      <td>614.93</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2015</td>
+      <td>Spokane</td>
+    </tr>
+    <tr>
+      <th>10789</th>
+      <td>51</td>
+      <td>2015-01-04</td>
+      <td>1.80</td>
+      <td>2057.29</td>
+      <td>1200.41</td>
+      <td>53.55</td>
+      <td>0.00</td>
+      <td>803.33</td>
+      <td>803.33</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2015</td>
+      <td>Orlando</td>
+    </tr>
+    <tr>
+      <th>11829</th>
+      <td>51</td>
+      <td>2015-01-04</td>
+      <td>1.46</td>
+      <td>612910.15</td>
+      <td>233286.13</td>
+      <td>216611.20</td>
+      <td>4370.99</td>
+      <td>158641.83</td>
+      <td>115068.71</td>
+      <td>43573.12</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2015</td>
+      <td>TotalUS</td>
+    </tr>
+    <tr>
+      <th>9957</th>
+      <td>51</td>
+      <td>2015-01-04</td>
+      <td>1.54</td>
+      <td>61615.10</td>
+      <td>3633.93</td>
+      <td>42963.06</td>
+      <td>0.00</td>
+      <td>15018.11</td>
+      <td>9763.55</td>
+      <td>5254.56</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2015</td>
+      <td>GreatLakes</td>
+    </tr>
+    <tr>
+      <th>11881</th>
+      <td>51</td>
+      <td>2015-01-04</td>
+      <td>1.40</td>
+      <td>187548.30</td>
+      <td>70313.71</td>
+      <td>72942.11</td>
+      <td>24.30</td>
+      <td>44268.18</td>
+      <td>10023.72</td>
+      <td>34244.46</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2015</td>
+      <td>West</td>
+    </tr>
+    <tr>
+      <th>9177</th>
+      <td>51</td>
+      <td>2015-01-04</td>
+      <td>1.79</td>
+      <td>1373.95</td>
+      <td>57.42</td>
+      <td>153.88</td>
+      <td>0.00</td>
+      <td>1162.65</td>
+      <td>1162.65</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2015</td>
+      <td>Albany</td>
+    </tr>
+    <tr>
+      <th>9281</th>
+      <td>51</td>
+      <td>2015-01-04</td>
+      <td>1.29</td>
+      <td>19137.28</td>
+      <td>8040.64</td>
+      <td>6557.47</td>
+      <td>657.48</td>
+      <td>3881.69</td>
+      <td>3881.69</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2015</td>
+      <td>BaltimoreWashington</td>
+    </tr>
+    <tr>
+      <th>10737</th>
+      <td>51</td>
+      <td>2015-01-04</td>
+      <td>1.83</td>
+      <td>7301.30</td>
+      <td>6.81</td>
+      <td>630.24</td>
+      <td>0.00</td>
+      <td>6664.25</td>
+      <td>6664.25</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2015</td>
+      <td>NorthernNewEngland</td>
+    </tr>
+    <tr>
+      <th>11569</th>
+      <td>51</td>
+      <td>2015-01-04</td>
+      <td>1.75</td>
+      <td>27365.89</td>
+      <td>9307.34</td>
+      <td>3844.81</td>
+      <td>615.28</td>
+      <td>13598.46</td>
+      <td>13061.10</td>
+      <td>537.36</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2015</td>
+      <td>Southeast</td>
+    </tr>
+    <tr>
+      <th>11361</th>
+      <td>51</td>
+      <td>2015-01-04</td>
+      <td>1.18</td>
+      <td>22630.58</td>
+      <td>13175.57</td>
+      <td>9028.34</td>
+      <td>0.00</td>
+      <td>426.67</td>
+      <td>426.67</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2015</td>
+      <td>SanFrancisco</td>
+    </tr>
+    <tr>
+      <th>9437</th>
+      <td>51</td>
+      <td>2015-01-04</td>
+      <td>1.73</td>
+      <td>379.82</td>
+      <td>0.00</td>
+      <td>59.82</td>
+      <td>0.00</td>
+      <td>320.00</td>
+      <td>320.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2015</td>
+      <td>BuffaloRochester</td>
+    </tr>
+    <tr>
+      <th>11465</th>
+      <td>51</td>
+      <td>2015-01-04</td>
+      <td>1.86</td>
+      <td>3351.76</td>
+      <td>355.79</td>
+      <td>754.78</td>
+      <td>439.19</td>
+      <td>1802.00</td>
+      <td>1768.67</td>
+      <td>33.33</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2015</td>
+      <td>SouthCarolina</td>
+    </tr>
+    <tr>
+      <th>10321</th>
+      <td>51</td>
+      <td>2015-01-04</td>
+      <td>1.25</td>
+      <td>54495.54</td>
+      <td>47721.51</td>
+      <td>1723.40</td>
+      <td>0.00</td>
+      <td>5050.63</td>
+      <td>5050.63</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2015</td>
+      <td>LosAngeles</td>
+    </tr>
+    <tr>
+      <th>9749</th>
+      <td>51</td>
+      <td>2015-01-04</td>
+      <td>1.35</td>
+      <td>9895.96</td>
+      <td>4634.70</td>
+      <td>1647.92</td>
+      <td>0.00</td>
+      <td>3613.34</td>
+      <td>3613.34</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2015</td>
+      <td>DallasFtWorth</td>
+    </tr>
+    <tr>
+      <th>9489</th>
+      <td>51</td>
+      <td>2015-01-04</td>
+      <td>1.24</td>
+      <td>142349.77</td>
+      <td>107490.73</td>
+      <td>25711.96</td>
+      <td>2.93</td>
+      <td>9144.15</td>
+      <td>9144.15</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2015</td>
+      <td>California</td>
+    </tr>
+    <tr>
+      <th>11932</th>
+      <td>50</td>
+      <td>2015-01-04</td>
+      <td>1.64</td>
+      <td>6182.81</td>
+      <td>1561.30</td>
+      <td>2958.17</td>
+      <td>0.00</td>
+      <td>1663.34</td>
+      <td>1663.34</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2015</td>
+      <td>WestTexNewMexico</td>
+    </tr>
+    <tr>
+      <th>9541</th>
+      <td>51</td>
+      <td>2015-01-04</td>
+      <td>2.13</td>
+      <td>2965.62</td>
+      <td>151.70</td>
+      <td>882.52</td>
+      <td>905.77</td>
+      <td>1025.63</td>
+      <td>1025.63</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2015</td>
+      <td>Charlotte</td>
+    </tr>
+    <tr>
+      <th>9905</th>
+      <td>51</td>
+      <td>2015-01-04</td>
+      <td>1.60</td>
+      <td>1012.61</td>
+      <td>23.59</td>
+      <td>772.85</td>
+      <td>0.00</td>
+      <td>216.17</td>
+      <td>210.00</td>
+      <td>6.17</td>
+      <td>0.00</td>
+      <td>organic</td>
+      <td>2015</td>
+      <td>GrandRapids</td>
+    </tr>
+  </tbody>
+</table>
+<p>9123 rows × 14 columns</p>
+</div>
+
+```python
+graph_df = pd.DataFrame()
+
+for r in df['region'].unique()[:16]:
+    print(r)
+    region_df = df[df['region']== r].copy()
+    region_df.set_index('date', inplace=True)
+    region_df.sort_index(inplace=True)
+    re = r.strip().lower().replace(" ","_")
+    region_df[f'{re}_price25ma'] = region_df['averageprice'].rolling(25).mean()
+
+    if graph_df.empty:
+        graph_df = region_df[[f'{re}_price25ma']]
+    else:
+        graph_df = graph_df.join(region_df[f'{re}_price25ma'])
+```
+
+    Albany
+    Atlanta
+    BaltimoreWashington
+    Boise
+    Boston
+    BuffaloRochester
+    California
+    Charlotte
+    Chicago
+    CincinnatiDayton
+    Columbus
+    DallasFtWorth
+    Denver
+    Detroit
+    GrandRapids
+    GreatLakes
+
+```python
+graph_df.tail()
+```
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>albany_price25ma</th>
+      <th>atlanta_price25ma</th>
+      <th>baltimorewashington_price25ma</th>
+      <th>boise_price25ma</th>
+      <th>boston_price25ma</th>
+      <th>buffalorochester_price25ma</th>
+      <th>california_price25ma</th>
+      <th>charlotte_price25ma</th>
+      <th>chicago_price25ma</th>
+      <th>cincinnatidayton_price25ma</th>
+      <th>columbus_price25ma</th>
+      <th>dallasftworth_price25ma</th>
+      <th>denver_price25ma</th>
+      <th>detroit_price25ma</th>
+      <th>grandrapids_price25ma</th>
+      <th>greatlakes_price25ma</th>
+    </tr>
+    <tr>
+      <th>date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2018-02-25</th>
+      <td>1.5112</td>
+      <td>1.8660</td>
+      <td>1.5836</td>
+      <td>2.0512</td>
+      <td>1.7636</td>
+      <td>1.2912</td>
+      <td>1.9128</td>
+      <td>2.0548</td>
+      <td>1.8160</td>
+      <td>1.7752</td>
+      <td>1.6064</td>
+      <td>1.5708</td>
+      <td>1.7084</td>
+      <td>1.4980</td>
+      <td>1.3388</td>
+      <td>1.5656</td>
+    </tr>
+    <tr>
+      <th>2018-03-04</th>
+      <td>1.4992</td>
+      <td>1.8288</td>
+      <td>1.5772</td>
+      <td>2.0176</td>
+      <td>1.7708</td>
+      <td>1.2744</td>
+      <td>1.8876</td>
+      <td>2.0180</td>
+      <td>1.8024</td>
+      <td>1.7564</td>
+      <td>1.5804</td>
+      <td>1.5536</td>
+      <td>1.6880</td>
+      <td>1.4692</td>
+      <td>1.3232</td>
+      <td>1.5460</td>
+    </tr>
+    <tr>
+      <th>2018-03-11</th>
+      <td>1.5044</td>
+      <td>1.7844</td>
+      <td>1.5732</td>
+      <td>1.9836</td>
+      <td>1.7824</td>
+      <td>1.2652</td>
+      <td>1.8636</td>
+      <td>1.9764</td>
+      <td>1.7836</td>
+      <td>1.7216</td>
+      <td>1.5496</td>
+      <td>1.5340</td>
+      <td>1.6708</td>
+      <td>1.4444</td>
+      <td>1.3200</td>
+      <td>1.5248</td>
+    </tr>
+    <tr>
+      <th>2018-03-18</th>
+      <td>1.5140</td>
+      <td>1.7412</td>
+      <td>1.5684</td>
+      <td>1.9520</td>
+      <td>1.7932</td>
+      <td>1.2560</td>
+      <td>1.8516</td>
+      <td>1.9444</td>
+      <td>1.7732</td>
+      <td>1.6860</td>
+      <td>1.5088</td>
+      <td>1.5196</td>
+      <td>1.6700</td>
+      <td>1.4092</td>
+      <td>1.3148</td>
+      <td>1.5012</td>
+    </tr>
+    <tr>
+      <th>2018-03-25</th>
+      <td>1.5188</td>
+      <td>1.6936</td>
+      <td>1.5568</td>
+      <td>1.9128</td>
+      <td>1.7984</td>
+      <td>1.2416</td>
+      <td>1.8364</td>
+      <td>1.9024</td>
+      <td>1.7672</td>
+      <td>1.6720</td>
+      <td>1.4848</td>
+      <td>1.5100</td>
+      <td>1.6568</td>
+      <td>1.3964</td>
+      <td>1.3108</td>
+      <td>1.4912</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+```python
+graph_df.dropna().plot( figsize=(20,10))
+```
+
+    <matplotlib.axes._subplots.AxesSubplot at 0x1a0e62c860>
+
+![png](/img/output_19_1.png)

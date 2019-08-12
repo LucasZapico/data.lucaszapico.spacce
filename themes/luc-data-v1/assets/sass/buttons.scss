@@ -1,0 +1,80 @@
+
+/************
+**  Button Colors
+***********/
+$dft-btn: $colord;
+$dft-btn-text: #fbfbfb;
+$act-btn: darken($colorb, 10%);
+$act-btn-text: #fbfbfb;
+$sec-btn: $colord;
+$sec-btn-text: $colord;
+
+.btn {
+  // display: block;
+  padding: 1rem 1.5rem;
+  margin-top: 1rem;
+  margin-right: 0.5rem;
+  text-align: center;
+
+  &.dft {
+    background-color: $dft-btn;
+    color: $dft-btn-text;
+
+    &:hover {}
+
+    &:focus {}
+  }
+
+  &.act {
+    background-color: $act-btn;
+    color: $act-btn-text;
+
+    &:hover {}
+
+    &:focus {}
+  }
+
+  &.sec {
+    border: $sec-btn solid 2px;
+    color: $sec-btn-text;
+
+    &:hover {}
+
+    &:focus {}
+  }
+}
+
+.link {
+  position: relative;
+  z-index: 2;
+  transition: all 0.2s ease-in-out;
+
+  &.dark {
+    &:before {}
+  }
+
+  &.light {
+    color: $light;
+
+    &:before {
+      z-index: -2;
+      position: absolute;
+      content: "";
+      height: 10px;
+      width: 100%;
+      bottom: -15px;
+      right: 0;
+      background: darken($colorb, 10%);
+      transition: all 0.2s ease-in-out;
+
+    }
+
+    &:hover {
+      &:before {
+        height: 220%;
+        width: 110%;
+      }
+    }
+  }
+
+}
