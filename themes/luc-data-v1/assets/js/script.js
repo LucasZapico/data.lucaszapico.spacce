@@ -1,5 +1,6 @@
 console.log("Im alive!")
 
+
 window.onload = function(){
 
   var ctx = document.getElementById('radar').getContext("2d");
@@ -17,12 +18,12 @@ window.onload = function(){
       }]
     },
     options: {
-      pointLabelFontSize: 20, 
+      pointLabelFontSize: 20,
       labels: {
         fontSize: 18
       },
       legend: {
-        
+
         position: 'bottom',
       },
       title: {
@@ -45,7 +46,7 @@ window.onload = function(){
       }
     }
   });
-  
+
 
   // D3 Module
   var graph = {
@@ -422,13 +423,14 @@ window.onload = function(){
 
       context.beginPath();
       graph.links.forEach(drawLink);
-      context.strokeStyle = "#293462";
+      context.strokeStyle = "#FFFEFB";
       context.stroke();
 
       context.beginPath();
       graph.nodes.forEach(drawNode);
       context.fill();
-      context.strokeStyle = "#293462";
+      context.fillStyle = "#FFFEFB";
+      context.strokeStyle = "#FFFEFB";
       context.stroke();
     }
 

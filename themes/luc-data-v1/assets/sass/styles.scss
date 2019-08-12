@@ -3,8 +3,10 @@
 @import "typography/typography.scss";
 @import "typography/type_color.scss";
 @import "utilities.scss";
+@import "buttons.scss";
 @import "play.scss";
 @import "d3.scss";
+@import "prism.scss";
 
 // @import "nav.scss";
 
@@ -12,8 +14,9 @@ body {
   background-color: #fafafa;
 
   a {
-    color: lighten($colorc,15%);
+    color: darken($colorb, 10%);
   }
+
   header {
     // h4 {
     //   background-color: #fafafa;
@@ -23,20 +26,30 @@ body {
     //   border-bottom: solid 9rem transparent;
     // }
   }
-  // radar 
+  // radar
+  #TableOfContents {
 
-canvas#radar{
-  width : 600px !important; 
-  height: 600px !important;
-}
-canvas {
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-}
+    margin-right: 0;
+    width: 20rem;
+
+    // ul {
+    //   list-style: none;
+    //   padding-left: 20px;
+    // }
+  }
+
+  canvas#radar {
+    width: 600px !important;
+    height: 600px !important;
+  }
+
+  canvas {
+
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+  }
 
 }
 
-@media screen and (min-width: 800px) {
-  
-}
+@media screen and (min-width: 800px) {}

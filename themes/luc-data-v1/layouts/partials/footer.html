@@ -1,43 +1,51 @@
 <footer class="top-plus space bottom">
   <div class="ui  grid container">
     <div class="row four column">
-    <div class="column">
+      <div class="column">
         <div class="ui vertical text menu">
-            <div class="header item">Data.Lucas</div>
-            {{ range .Site.Menus.main }}
-            <a class="item">
-              {{.Name}}
-            </a>
-            {{end}}
-          </div>
-    
-      
+          <div class="header item">Data.Lucas</div>
+          {{ range .Site.Menus.main }}
+          <a class="item">
+            {{.Name}}
+          </a>
+          {{end}}
+        </div>
+
+
+      </div>
+      <div class="column">
+
+      </div>
+      <div class="column"></div>
+      <div class="column"> <a href="https://www.linkedin.com/in/lucasmmzapico/"><i class="github large icon"></i></a>
+        <a href="https://github.com/LucasZapico"><i class="linkedin large icon"></i></a></div>
     </div>
-    <div class="column">
-       
-    </div>
-    <div class="column"></div>
-    <div class="column"> <a href="https://www.linkedin.com/in/lucasmmzapico/"><i class="github large icon"></i></a>
-      <a  href="https://github.com/LucasZapico"><i class="linkedin large icon"></i></a></div>
-  </div>
-  <div class="row two column">
-    
+    <div class="row two column">
+
       <div class="column">
         Last Change
         {{ .Site.LastChange }}
       </div>
       <div class="column floated right">
-       <div class="ui grey small header"> Data.LucasZapico.Space was designed and build by Lucas Zapico 2019 with a little help from <a href="https://gohugo.io">Hugo</a> and <a href="https://semantic-ui.com">Semantic ui</a></div>
+        <div class="ui grey small header"> Data.LucasZapico.Space was designed and build by Lucas Zapico 2019 with a little help from <a href="https://gohugo.io">Hugo</a> and <a href="https://semantic-ui.com">Semantic ui</a></div>
       </div>
       <div class="column"></div>
     </div>
-</div>
+  </div>
 
 </footer>
 <script src="https://unpkg.com/ionicons@4.2.2/dist/ionicons.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>
-<script src="https://d3js.org/d3.v5.min.js"></script>
-{{ $script := resources.Get "/js/script.js" }}
 
+</body>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+
+{{ $prism := resources.Get "/js/prism.js" }}
+{{ $prism := $prism | resources.Minify }}
+
+<script type="text/javascript" src="{{ $prism.Permalink }}"></script>
+
+{{ $script := resources.Get "/js/script.js" }}
+{{ $script := $script | resources.Minify }}
 <script type="text/javascript" src="{{ $script.Permalink }}"></script>
