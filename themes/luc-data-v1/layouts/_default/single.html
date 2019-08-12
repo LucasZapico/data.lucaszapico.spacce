@@ -1,50 +1,57 @@
 {{ define "main" }}
+<div class="bg-color-b">
 <div class="ui hidden divider"></div>
 <div class="ui hidden divider"></div>
 <div class="ui hidden divider"></div>
-<div class="ui two column grid container space all">
-<section id="main" class=" ui column twelve wide">
-  
-    <h1 id="title">{{ .Title }}</h1>
-    <div>
+<div class="ui grid container space all">
+  <div class="row">
+    <section id="main" class=" ui column ten wide">
       <article id="content ">
+        <h1 id="title">{{ .Title }}</h1>
+
+
         {{ .Content }}
       </article>
+
+    </section>
+    
     </div>
-</section>
-<aside id="meta" class="column four wide segment ui">
-  <div>
-    <section>
-        {{ .TableOfContents }} 
+    <div class="row">
+  <aside id="meta" class="column four wide floated left ">
+    <div>
+      <section>
+        {{ .TableOfContents }}
         <div class="sub ui header " id="date"> {{ .Date.Format "Mon Jan 2, 2006" }} </div>
         <div class="sub grey ui header " id="wordcount"> {{ .WordCount }} Words </div>
-      
-    
-    </section>
-    <div class="ui hidden divider"></div>
-    {{ with .Params.topics }}
-    <ul id="topics">
-      {{ range . }}
-      <li><a href="{{ "topics" | absURL}}{{ . | urlize }}">{{ . }}</a> </li>
+
+
+      </section>
+      <div class="ui hidden divider"></div>
+      {{ with .Params.topics }}
+      <ul id="topics">
+        {{ range . }}
+        <li><a href="{{ "topics" | absURL}}{{ . | urlize }}">{{ . }}</a> </li>
+        {{ end }}
+      </ul>
       {{ end }}
-    </ul>
-    {{ end }}
-    {{ with .Params.tags }}
-    <ul id="tags">
-      {{ range . }}
-      <li> <a href="{{ "tags" | absURL }}{{ . | urlize }}">{{ . }}</a> </li>
+      {{ with .Params.tags }}
+      <ul id="tags">
+        {{ range . }}
+        <li> <a href="{{ "tags" | absURL }}{{ . | urlize }}">{{ . }}</a> </li>
+        {{ end }}
+      </ul>
       {{ end }}
-    </ul>
-    {{ end }}
+    </div>
+    <div>
+      {{ with .PrevInSection }}
+      <a class="previous" href="{{.Permalink}}"> {{.Title}}</a>
+      {{ end }}
+      {{ with .NextInSection }}
+      <a class="next" href="{{.Permalink}}"> {{.Title}}</a>
+      {{ end }}
+    </div>
+  </aside>
   </div>
-  <div>
-    {{ with .PrevInSection }}
-    <a class="previous" href="{{.Permalink}}"> {{.Title}}</a>
-    {{ end }}
-    {{ with .NextInSection }}
-    <a class="next" href="{{.Permalink}}"> {{.Title}}</a>
-    {{ end }}
-  </div>
-</aside>
+</div>
 </div>
 {{ end }}
