@@ -20,7 +20,7 @@ category = "categories"
 
   [[menu.main]]
     name = "home"
-    url = "/"
+    url = ""
     weight = 1
 
   [[menu.main]]
