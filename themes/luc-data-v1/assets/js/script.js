@@ -50,7 +50,7 @@ window.onload = function(){
     data: {
       labels: ['Programming', 'Analysis', 'Data Visualization', 'Data Wrangliing', 'Maths'],
       datasets: [{
-        data: [ 70, 55, 75, 65, 80],
+        data: [ 60, 55, 65, 60, 70],
         label: 'Test',
         backgroundColor: "hsla(200, 36%, 39%, 0.30)",
         borderColor: "hsla(200, 36%, 39%, 0.70)",
