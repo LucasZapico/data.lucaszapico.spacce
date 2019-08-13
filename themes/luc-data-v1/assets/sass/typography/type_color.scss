@@ -14,6 +14,10 @@
   color: $colord;
 }
 
+.color-dd {
+  color: darken($colord, 10%);
+}
+
 .color-light {
   color: $light;
 }
