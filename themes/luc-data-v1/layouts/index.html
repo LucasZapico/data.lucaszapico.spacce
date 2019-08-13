@@ -1,5 +1,5 @@
 {{ define "main" }}
-<main class="space top-plus color-grey-l bg-color-a bottom-plus">
+<main class="home space top-plus color-grey-l bg-color-a bottom-plus">
   <header class="space top-plus">
 
     <div class="ui grid container">
@@ -19,43 +19,104 @@
   </header>
   <section class="bg-color-a space all-plus">
     <div class="ui grid centered">
+      <div class="row">
 
-      <div class="eight wide column ">
-        <div class="giga color-light">I am an aspiring data cowboy. Kidding, honestly I just really enjoy looking for and discovering effient solutions.</div>
-        <div class="ui hidden divider"></div>
-        <div>
-          <h3 class="color-light">About</h3>
-          <h5 class="">Past</h5>
-          <p>
-            I have always been a problem solver. When I was young, I would deconstruct oragami and figure out how a piece was made. My problemm solving process has only matured since then. The core system is the same. Emerser youself in the space. I
-            studied maths and econmics in academia but had to leave due to personal reasons. It is very much a priority to
-            coomplete
-            my degree once a career is stablized.
-          </p>
-          <p>
-            Upon leaving school in 2016 I had to figure out how to add value. I found myself in doing application design and user experience design. I had always had an eye for design as good design and an efficient solution are one and the same in
-            my mind.
-          </p>
-          <p class="color-grey-l">
-            Since Feburary 2019 I have been a marketing analyist specializing in Microsoft Bing platform. Due to Bing rapid growth over the last five years I found myself working with processes and tools that were still maturing. As such it was a
-            perfect opportunity to start acquiring the begining of a data science tool kit. I took my past experience with web development and hopped into python, pandas and matplotlib and I was not disappointed.
-          </p>
-          <h4>Friction Points</h4>
-          <ul>
-            <li>
-              We were pulling analytics data from three data sources with inconsistent properties and data types. The previous solution was excel based...enough said.
-            </li>
-          </ul>
-          <h4>Solutions</h4>
-          <ul>
-            <li>
-              Created a script that cleaned and created homogenous properties and data types. This resulted in more acturate analysis and increased band width for higher congnitive tasks.
-            </li>
-          </ul>
+
+        <div class="eight wide column ">
+          <div class="giga color-light">I am an aspiring data cowboy. Kidding, honestly I just really enjoy looking for and discovering effient solutions.</div>
+          <div class="ui hidden divider"></div>
+          <div>
+            <h3 class="color-light" id="about">About</h3>
+            <h5 class="">In The Beginning</h5>
+            <p>
+               I have always been a problem solver. When I was young, I would deconstruct origami and figure out how a piece was made. My process has only matured since then. The core system is the same. Stretch and explore the space touch the
+              limitation of the elements on the board and discuss and fail quickly. 
+            </p>
+            <h5 class="">Past</h5>
+            <p>
+                     I studied maths and economics in academia but left without completing my major at UCLA. I burned out from a nieve workload, trying to complete a master in maths, and a bachelor's in economics in three years. The experience was
+              one of the most difficult and eye-opening of my life. Due to the consequences of those choices, I have grit and perspective that I am not sure I would have found otherwise. It is very much on my life list to finish my majors.     
+            </p>
+            <h5 class="">Recent Past</h5>
+            <p>
+                     I have always had a natural appreciation and inclination for design. So, after leaving school in 2016, I was able to get into a development firm doing there user interface and user experience design. I owned design iterations on
+              seven products during my year and a half there. To me, design is just a different type of problem. I then did a stint of freelance work doing branding, marketing, and design during which time I did a deep dive into web development. I
+              used said skills to build this here website.  :)   
+            </p>
+
+            <h5 class="">Presentist</h5>
+            <p>
+              Since February 2019, I took the opportunity to move back into something a bit more analytic and have been a marketing analyst specializing in Microsoft Bing platform. Due to Bing rapid growth over the last five years, I found myself
+              working with processes and tools that were very much still iterating. As such, it was a perfect opportunity to start acquiring the beginning of a data science tool kit. I leveraged a bit of mental muscle developed through my maths and
+              a budding computer science foundation to hop into python, pandas, and matplotlib. The data analyst tool kid did not disappoint. I have called out a few business solutions that though somewhat trivial, made a massive difference in my
+              day to day workflow.       
+            </p>
+          </div>
         </div>
       </div>
+      <div class="row">
+        <div class="eight wide column">
+          <h5 class="kill-margin">Code Is Life</h5>
+          <h6 class="kill-margin">Real business challenge I solved with code and it felt amazing!</h6>
+          <div id="test" class="ui top attached tabular menu">
+            <a class="active item">
+              Micro-Case One
+            </a>
+            <a class="item">
+              Micro-Case Two
+            </a>
+            <a class="item">
+              Micro-Case Three
+            </a>
+          </div>
+          <div class="ui bottom attached  segment">
+            <div id="tab-one" class="show">
+              <h4>Challenge1</h4>
+              <p>
+                We were pulling analytics data from three data sources with inconsistent properties and data types. The previous solution was to manually clean and adjust properties.
+              </p>
+              <h4>Solutions</h4>
+              <p>
+                Created a bit of script with pandas that cleaned and created homogenous properties and data types. This resulted in more acturate analysis and increased band width.
+              </p>
+              <p class="color-grey-ll">
+                Ideally much of the preprocessing could be handled programmatically with an API intergration but for business reason this has not been fully adopted
+              </p>
+            </div>
+            <div id="tab-two" class="">
+              <h4>Challenge2</h4>
+              <ul>
+                <li>
+                  We were pulling analytics data from three data sources with inconsistent properties and data types. The previous solution was excel based...enough said.
+                </li>
+              </ul>
+              <h4>Solutions</h4>
+              <ul>
+                <li>
+                  Created a script that cleaned and created homogenous properties and data types. This resulted in more acturate analysis and increased band width for higher congnitive tasks.
+                </li>
+              </ul>
+            </div>
 
-    </div>
+            <div id="tab-three" class="">
+              <h4>Challenge3</h4>
+              <ul>
+                <li>
+                  We were pulling analytics data from three data sources with inconsistent properties and data types. The previous solution was excel based...enough said.
+                </li>
+              </ul>
+              <h4>Solutions</h4>
+              <ul>
+                <li>
+                  Created a script that cleaned and created homogenous properties and data types. This resulted in more acturate analysis and increased band width for higher congnitive tasks.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
   </section>
   {{/* <div class="ui hidden divider"></div> */}}
 
@@ -74,7 +135,7 @@
     </div>
   </section>
   <section class="space all-plus bg-color-a ">
-    <h3 class=" peta color-grey-l space bottom-minus kill-margin">Some Projects</h3>
+    <h3 class=" peta color-grey-l space bottom-minus kill-margin" id="project">Some Projects</h3>
     <h4 class="color-grey-ll kill-margin">Look Mom I can code</h4>
     <div class="six wide collumn">
       <p class="color-grey-ll kill-margin space bottom">I am started picking up a python data analysis stack in April so the projects showcased are mostly from courses"</p>

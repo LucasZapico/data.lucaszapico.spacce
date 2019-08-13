@@ -47,5 +47,5 @@
 <script type="text/javascript" src="{{ $prism.Permalink }}"></script>
 
 {{ $script := resources.Get "/js/script.js" }}
-{{ $script := $script | resources.Minify }}
+
 <script type="text/javascript" src="{{ $script.Permalink }}"></script>
