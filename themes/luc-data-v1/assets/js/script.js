@@ -3,6 +3,46 @@ console.log("Im alive!")
 
 window.onload = function(){
 
+
+    function toggleTabs() {
+      var tabWrap = document.querySelector('#test')
+      var tabContent = document.querySelectorAll('.ui.bottom.attached.segment')
+      console.log(tabContent)
+      console.log(tabContent[0].children)
+      tabContent = Array.from(tabContent[0].children)
+      tabs = Array.from(tabWrap.children)
+      tabs.forEach(function(t){
+        t.addEventListener("click", function(){
+          let index = tabs.indexOf(t)
+
+          var c = tabContent[index]
+          active(t,c)
+        })
+      })
+
+      function active(t,c){
+
+        remove(c)
+        if(!t.classList.contains('active')){
+          t.classList.add('active')
+          c.classList.add('show')
+        }else {
+          t.classList.remove('active')
+          c.classList.remove('show')
+        }
+      }
+      function remove(c){
+        tabs.forEach(function(t){
+          t.classList.remove("active")
+        })
+        tabContent.forEach(function(c){
+          c.classList.remove("show")
+        })
+      }
+    }
+
+    toggleTabs();
+
   var ctx = document.getElementById('radar').getContext("2d");
 
   var myRadarChart = new Chart(ctx, {
