@@ -79,13 +79,13 @@
             </div>
 
             <div id="tab-three" class="">
-              <h4>Challenge3</h4>
+              <h4 class="color-dd">Challenge3</h4>
               <ul>
                 <li>
                   We were pulling analytics data from three data sources with inconsistent properties and data types. The previous solution was excel based...enough said.
                 </li>
               </ul>
-              <h4>Solutions</h4>
+              <h4 class="color-dd">Solutions</h4>
               <ul>
                 <li>
                   Created a script that cleaned and created homogenous properties and data types. This resulted in more acturate analysis and increased band width for higher congnitive tasks.
@@ -115,7 +115,7 @@
     </div>
   </section>
   <section class="space all-plus bg-color-a ">
-    <h3 class=" peta color-grey-l space bottom-minus kill-margin" id="project">Some Projects</h3>
+    <h3 class=" peta color-grey-l space bottom-minus kill-margin color-dd" id="project">Some Projects</h3>
     <h4 class="color-grey-ll kill-margin">A Bit of Proof Of Technical Skill</h4>
     <div class="six wide collumn">
       <p class="color-grey-ll kill-margin space bottom">I am started picking up a python data analysis stack in April so the projects showcased are mostly from courses</p>
@@ -125,7 +125,7 @@
       {{ range .Site.Taxonomies.categories.project }}
 
       <div class="eight wide column">
-        <h3 class="header h3 top attached ui"> <a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        <h3 class="header h3 top attached ui color-dd""> <a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
         <div class="ui attached segment">
           <p>{{.Summary}} </p>
           {{ if .Truncated }}
