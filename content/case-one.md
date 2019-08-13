@@ -5,6 +5,7 @@ draft: false
 categories: ["case"]
 ---
 
+
 -   Data acquistion
 -   Data manipulation
 -   Data presentation

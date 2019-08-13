@@ -14,3 +14,40 @@ header {
     width: 50vw;
   }
 }
+
+// Home view project tabs
+
+.home {
+  .ui.attached.tabular.menu {
+    a {
+      color: $grey-l-1;
+      background-color: $colora;
+      transition: all ease-in-out 0.3s;
+    }
+  }
+
+  .ui.bottom.attached.segment {
+    background-color: $colora;
+    position: relative;
+    height: 30rem;
+    min-width: 15rem;
+    overflow: hidden;
+
+    & > div {
+      padding: 1rem;
+      position: absolute;
+      visibility: hidden;
+      transform: translateX(100%);
+    }
+  }
+
+  .ui.bottom.attached.segment {
+    & > div.show {
+      visibility: visible;
+
+      transform: translateX(0);
+      transition: all ease-in-out 1s;
+    }
+
+  }
+}
