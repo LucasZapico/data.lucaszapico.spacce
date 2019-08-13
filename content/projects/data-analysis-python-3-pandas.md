@@ -12,6 +12,8 @@ This courses is walk through of the basic python and pandas analysis tools set. 
 
 [Link to coursee](https://pythonprogramming.net/introduction-python3-pandas-data-analysis/)
 
+#### Packages
+
 ```python
 import pandas as pd
 import numpy as np
@@ -19,10 +21,14 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 ```
 
+##### Import Data
+
 ```python
 # Import data
 df = pd.read_csv('avocado.csv')
 ```
+
+##### Clean Column Headers
 
 ```python
 df.rename(columns=lambda x: x.strip().lower().replace(" ", "_"), inplace=True)
@@ -89,6 +95,7 @@ df_alb["averageprice"].plot()
 ```python
 df_alb.sort_index(inplace=True)
 ```
+#### Moving Average
 
 ```python
 # calculating a moving average
@@ -1185,6 +1192,8 @@ df.sort_values("date", ascending=False)
 <p>9123 rows × 14 columns</p>
 </div>
 
+#### Transform Regions to Column Headers by Moving Average Price 
+
 ```python
 graph_df = pd.DataFrame()
 
@@ -1378,6 +1387,8 @@ graph_df.tail()
   </tbody>
 </table>
 </div>
+
+#### Visualize Average Price By Region Over Time
 
 ```python
 graph_df.dropna().plot( figsize=(20,10))
