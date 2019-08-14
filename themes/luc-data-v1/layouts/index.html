@@ -28,9 +28,10 @@
           <div>
             <h3 class="color-dd" id="about">About</h3>
             <h5 class="">
-               I have always been a problem solver. When I was young, I would deconstruct origami and figure out how a piece was made. This curiosity lead me to the study of maths because of the power of the tool. This same line of thought is what brought me to programming as code gives legs to any analysis. 
+               I have always been a problem solver. When I was young, I would deconstruct origami and figure out how a piece was made. This curiosity lead me to the study of maths because of the power of the tool. This same line of thought is what
+              brought me to programming as code gives legs to any analysis.
             </h5>
-            
+
           </div>
         </div>
       </div>
@@ -125,8 +126,8 @@
       {{ range .Site.Taxonomies.categories.project }}
 
       <div class="eight wide column">
-        <h3 class="header h3 top attached ui color-dd""> <a class="link" href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-        <div class="ui attached segment">
+        <h3 class="header h3 top attached ui bg-color-dd color-light"> <a class="" href=" {{ .RelPermalink }}">{{ .Title }}</a></h3>
+        <div class=" ui attached segment">
           <p>{{.Summary}} </p>
           {{ if .Truncated }}
           <!-- This <div> includes a read more link, but only if the summary is truncated... -->

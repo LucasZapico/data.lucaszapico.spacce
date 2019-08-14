@@ -33,6 +33,10 @@ $grey-d-3: #33332B;
   background-color: $colord;
 }
 
+.bg-color-dd {
+  background-color: darken($colord,10%);
+}
+
 .bg-color-e {
   background-color: $colore;
 }

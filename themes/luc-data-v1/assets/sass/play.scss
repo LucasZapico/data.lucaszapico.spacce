@@ -1,13 +1,11 @@
-
 #content {
   #TableOfContents nav {
     ul {
       list-style: none;
     }
   }
-  
-}
 
+}
 
 header {
 
@@ -29,6 +27,24 @@ header {
 // Home view project tabs
 
 .home {
+  .ui.header.h3.attached {
+    transition: all ease-in-out 0.2s;
+    background-color: darken($colord, 10%);
+
+    a {
+      color: $light;
+    }
+
+    &:hover {
+      background-color: $light;
+
+      a {
+        color: $colord;
+      }
+
+    }
+  }
+
   .ui.attached.tabular.menu {
     a {
       color: $grey-l-1;
