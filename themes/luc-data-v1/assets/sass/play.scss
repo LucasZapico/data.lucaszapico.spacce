@@ -1,12 +1,3 @@
-#content {
-  #TableOfContents nav {
-    ul {
-      list-style: none;
-    }
-  }
-
-}
-
 header {
 
   // position: relative;
@@ -27,22 +18,48 @@ header {
 // Home view project tabs
 
 .home {
-  .ui.header.h3.attached {
-    transition: all ease-in-out 0.2s;
-    background-color: darken($colord, 10%);
+  .project {
+    a.ui.fluid.image {
+      overflow: hidden;
 
-    a {
-      color: $light;
-    }
-
-    &:hover {
-      background-color: $light;
-
-      a {
-        color: $colord;
+      img {
+        transition: all ease-in-out 0.2s;
+        transform: scale(1);
       }
 
     }
+
+    .ui.header.h3.attached {
+      transition: all ease-in-out 0.2s;
+      background-color: darken($colord, 10%);
+
+      a {
+        color: $light;
+      }
+
+    }
+
+    &:focus,
+    &:hover {
+      .ui.header.h3.attached {
+        &:hover {
+          background-color: $light;
+
+          a {
+            color: $colord;
+          }
+
+        }
+      }
+
+      a.ui.fluid.image {
+        img {
+          transform: scale(1.2);
+        }
+      }
+
+    }
+
   }
 
   .ui.attached.tabular.menu {

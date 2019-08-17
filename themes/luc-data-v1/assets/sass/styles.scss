@@ -28,14 +28,16 @@ body {
   }
   // radar
   #TableOfContents {
-
+    background-color: inherit;
+    position: fixed;
+    top: 4rem;
     margin-right: 0;
     width: 20rem;
 
-    // ul {
-    //   list-style: none;
-    //   padding-left: 20px;
-    // }
+    ul {
+      list-style: none;
+      padding-left: 20px;
+    }
   }
 
   canvas#radar {
