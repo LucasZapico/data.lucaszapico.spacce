@@ -11,8 +11,10 @@ $sec-btn-text: $colord;
 
 .btn {
   // display: block;
+  transition: all ease-in-out 0.2s;
   padding: 1rem 1.5rem;
   margin-top: 1rem;
+  margin-bottom: 1rem;
   margin-right: 0.5rem;
   text-align: center;
 
@@ -20,9 +22,12 @@ $sec-btn-text: $colord;
     background-color: $dft-btn;
     color: $dft-btn-text;
 
-    &:hover {}
+    &:focus,
+    &:hover {
+      background-color: $dft-btn-text;
+      color: $colord;
 
-    &:focus {}
+    }
   }
 
   &.act {

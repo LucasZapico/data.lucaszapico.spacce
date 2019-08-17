@@ -4,11 +4,12 @@ date: 2019-08-11T11:28:56-07:00
 draft: false
 categories: ["project"]
 type: "notebooks"
+img: "/img/output_19_1.png"
 ---
 
 # Data Analysis Python 3 and Pandas
 
-This courses is walk through of the basic python and pandas analysis tools set. There is some small deviation from the course. But, the objective here is to show "action" rather then to show case my own code. 
+This courses is walk through of the basic python and pandas analysis tools set. There is some small deviation from the course. But, the objective here is to show "action" rather then to show case my own code.
 
 [Link to coursee](https://pythonprogramming.net/introduction-python3-pandas-data-analysis/)
 
@@ -95,6 +96,7 @@ df_alb["averageprice"].plot()
 ```python
 df_alb.sort_index(inplace=True)
 ```
+
 #### Moving Average
 
 ```python
@@ -1192,7 +1194,7 @@ df.sort_values("date", ascending=False)
 <p>9123 rows × 14 columns</p>
 </div>
 
-#### Transform Regions to Column Headers by Moving Average Price 
+#### Transform Regions to Column Headers by Moving Average Price
 
 ```python
 graph_df = pd.DataFrame()

@@ -7,7 +7,7 @@
         <h1 class="color-light">Hi, I'm Lucas.
           I use creativity and a love of problems to tell the stories of data.</h1>
 
-        <a class="link light" href="/#about">More about Lucas <i class="icon rocket large"></i></a>
+        <a class="btn dft">More about Lucas <i class="icon rocket large"></i></a>
       </div>
       <div class="eight wide column">
 
@@ -17,16 +17,14 @@
       <canvas id="canvas" width="700" height="700"></canvas>
     </div>
   </header>
-  <section class="bg-color-a space all-plus">
+  <section class="bg-color-a space all-plus" id="about" href="/#about">
     <div class="ui grid centered">
       <div class="row">
-
-
         <div class="eight wide large screen column ">
           <div class="giga color-light">I am an aspiring data analyst and I really enjoy looking for and discovering insight and efficient solutions.</div>
           <div class="ui hidden divider"></div>
           <div>
-            <h3 class="color-dd" id="about">About</h3>
+            <h3 class="color-dd">About</h3>
             <h5 class="">
                I have always been a problem solver. When I was young, I would deconstruct origami and figure out how a piece was made. This curiosity lead me to the study of maths because of the power of the tool. This same line of thought is what
               brought me to programming as code gives legs to any analysis.
@@ -39,7 +37,7 @@
         <div class="eight wide large screen  column">
           <h5 class="kill-margin color-dd">Code Is Life</h5>
           <h6 class="kill-margin">Real business challenge I solved with code and it felt amazing!</h6>
-          <div id="test" class="ui top attached tabular menu">
+          <div class="ui top attached tabular menu">
             <a class="active item">
               Micro-Case One
             </a>
@@ -99,7 +97,36 @@
 
       </div>
   </section>
-  {{/* <div class="ui hidden divider"></div> */}}
+  <section class="space all-plus bg-color-a " id="project">
+    <h3 class=" peta color-grey-l space bottom-minus kill-margin color-dd">Some Projects</h3>
+    <h4 class="color-grey-ll kill-margin">A Bit of Proof Of Technical Skill</h4>
+    <div class="six wide column">
+      <p class="color-grey-ll kill-margin space bottom">I am started picking up a python data analysis stack in April so the projects showcased are mostly from courses</p>
+    </div>
+    <div class="ui grid color-dark">
+      {{ range .Site.Taxonomies.categories.project }}
+      <div class="eight wide column">
+        <div class="project">
+          <h3 class="header h3 top attached ui bg-color-d color-light"> <a class="" href=" {{ .RelPermalink }}">{{ .Title }}</a></h3>
+          <div class=" ui attached segment">
+            <a href="{{ .RelPermalink }}" class="ui fluid image">
+              <img src="{{ .Page.Params.Img }}">
+            </a>
+            <p>{{.Summary}} </p>
+            {{ if .Truncated }}
+            <!-- This <div> includes a read more link, but only if the summary is truncated... -->
+            <div>
+              <a class="btn dft" href="{{ .RelPermalink }}">Read More…</a>
+            </div>
+
+            {{ end }}
+          </div>
+        </div>
+      </div>
+      {{end}}
+    </div>
+  </section>
+  <div class="ui hidden divider"></div>
 
   <section class="space bottom-plus top-plus bg-light">
     <div class="ui grid centered">
@@ -115,32 +142,7 @@
       </div>
     </div>
   </section>
-  <section class="space all-plus bg-color-a ">
-    <h3 class=" peta color-grey-l space bottom-minus kill-margin color-dd" id="project">Some Projects</h3>
-    <h4 class="color-grey-ll kill-margin">A Bit of Proof Of Technical Skill</h4>
-    <div class="six wide column">
-      <p class="color-grey-ll kill-margin space bottom">I am started picking up a python data analysis stack in April so the projects showcased are mostly from courses</p>
-    </div>
-
-    <div class="ui grid color-dark">
-      {{ range .Site.Taxonomies.categories.project }}
-
-      <div class="eight wide column">
-        <h3 class="header h3 top attached ui bg-color-dd color-light"> <a class="" href=" {{ .RelPermalink }}">{{ .Title }}</a></h3>
-        <div class=" ui attached segment">
-          <p>{{.Summary}} </p>
-          {{ if .Truncated }}
-          <!-- This <div> includes a read more link, but only if the summary is truncated... -->
-          <div>
-            <a href="{{ .RelPermalink }}">Read More…</a>
-          </div>
-          {{ end }}
-        </div>
-      </div>
-      {{end}}
-    </div>
-
-
+  <section>
 
 
   </section>
