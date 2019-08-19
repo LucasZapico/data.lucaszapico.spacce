@@ -13,7 +13,11 @@ This courses is walk through of the basic python and pandas analysis tools set. 
 
 [Link to coursee](https://pythonprogramming.net/introduction-python3-pandas-data-analysis/)
 
+![png](/img/output_19_1.png)
+
 #### Packages
+
+Pull in the necessary packages for the project.
 
 ```python
 import pandas as pd
@@ -30,6 +34,8 @@ df = pd.read_csv('avocado.csv')
 ```
 
 ##### Clean Column Headers
+
+Useful practice for keeping column heaaders clean. 
 
 ```python
 df.rename(columns=lambda x: x.strip().lower().replace(" ", "_"), inplace=True)
