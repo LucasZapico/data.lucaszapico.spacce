@@ -1,5 +1,5 @@
 ---
-title: "Jyputer Data Analysis - Avocados"
+title: "Jupyter Data Analysis - Avocados"
 date: 2019-08-11T11:28:56-07:00
 draft: false
 categories: ["project"]
