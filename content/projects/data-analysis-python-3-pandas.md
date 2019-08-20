@@ -11,7 +11,7 @@ img: "/img/output_19_1.png"
 
 This courses is walk through of the basic python and pandas analysis tools set. There is some small deviation from the course. But, the objective here is to show "action" rather then to show case my own code.
 
-[Link to coursee](https://pythonprogramming.net/introduction-python3-pandas-data-analysis/)
+[Link to course](https://pythonprogramming.net/introduction-python3-pandas-data-analysis/)
 
 ![png](/img/output_19_1.png)
 
@@ -35,7 +35,7 @@ df = pd.read_csv('avocado.csv')
 
 ##### Clean Column Headers
 
-Useful practice for keeping column heaaders clean. 
+Useful practice for keeping column headers clean. 
 
 ```python
 df.rename(columns=lambda x: x.strip().lower().replace(" ", "_"), inplace=True)
