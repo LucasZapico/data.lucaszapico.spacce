@@ -1,0 +1,311 @@
+---
+  - 
+    course_title: "Data Science Foundations: Data Mining"
+    space: "Data Science"
+    authority: "LinkedInLearning"
+    year: 2019
+    tags: 
+      - "data-science"
+      - "data-analytics"
+      - "data-mining"
+  - 
+    course_title: "Excel 2016: Managing and Analyzing Data"
+    space: "Data Analysis"
+    authority: "LinkedInLearning"
+    year: 2019
+    tags: 
+      - "data-analytics"
+      - "excel"
+  - 
+    course_title: "Data Science Foundations: Fundamentals"
+    space: "Data Science"
+    authority: "LinkedInLearning"
+    year: 2019
+    tags: 
+      - "data-science"
+      - "data-analytics"
+  - 
+    course_title: "Learning Data Governance"
+    space: "Data Science"
+    authority: "LinkedInLearning"
+    year: 2019
+    tags: 
+      - "data-science"
+      - "data-analytics"
+      - "data-governace"
+  - 
+    course_title: "Online Marketing Foundations: Digital Marketing Research"
+    space: "Marketing"
+    authority: "LinkedInLearning"
+    year: 2019
+    tags: 
+      - "digital-marketing"
+      - "research"
+  - 
+    course_title: "Introduction to PPC with Google AdWords and Bing Ads"
+    space: "Marketing"
+    authority: "LinkedInLearning"
+    year: 2019
+    tags: 
+      - "digital-marketing"
+      - "search-engine-marketing"
+      - "pay-per-click"
+    
+  - 
+    course_title: "pandas Essential Training"
+    space: "Data Analytics"
+    metaSpace: "Data Science"
+    authority: "LinkedInLearning"
+    year: 2019
+    tags: 
+      - "python"
+      - "data-science"
+      - "pandas"
+      - "data-analytics"
+      - "data-visualization"
+    
+  - 
+    course_title: "Marketing Analytics: Presenting Digital Marketing Data"
+    space: "Marketing"
+    authority: "LinkedInLearning"
+    year: 2019
+    tags: 
+      - "marketing"
+      - "data-analytics"
+      - "digital-marketing"
+  - 
+    course_title: "Processing and Interchanging JSON Data"
+    space: "Developement"
+    authority: "LinkedInLearning"
+    year: 2019
+    tags: 
+      - "data-formats"
+      - "computer-science"
+  - 
+    course_title: "Stay Lean with Kanban"
+    space: "Project Management"
+    authority: "LinkedInLearning"
+    year: 2019
+    tags: 
+      - "project-management"
+      - "'agile"
+      - "business"
+  - 
+    course_title: "Advanced SEO: Developing an SEO-Friendly Website"
+    space: "Marketing"
+    authority: "LinkedInLearning"
+    year: 2019
+    tags: 
+      - "search-engine-optimization"
+      - "search-engine-marketing"
+  - 
+    course_title: "SEO Foundations"
+    space: "Marketing"
+    authority: "LinkedInLearning"
+    year: 2019
+    tags: 
+      - "search-engine-optimization"
+      - "search-engine-marketing"
+  - 
+    course_title: "Writing a Marketing Plan"
+    space: "Marketing"
+    authority: "LinkedInLearning"
+    year: 2019
+    tags: 
+      - "marketing-research"
+      - "marketing"
+  - 
+    course_title: "Yo Santosa, Branding Expert"
+    space: "Marketing"
+    authority: "LinkedInLearning"
+    year: 2019
+    tags: 
+      - "branding"
+  - 
+    course_title: "Graphic Design Foundations: Layout and Composition"
+    space: "Design"
+    authority: "LinkedInLearning"
+    year: 2019
+    tags: 
+      - "design"
+      - "foundations"
+      - "layout"
+  - 
+    course_title: "Learning Graphic Design: Layouts"
+    space: "Design"
+    authority: "LinkedInLearning"
+    year: 2019
+    tags: 
+      - "design"
+      - "layout"
+  - 
+    course_title: "Universal Principles of Design"
+    space: "Design"
+    authority: "LinkedInLearning"
+    year: 2019
+    tags: 
+      - "design"
+      - "principles"
+  - 
+    course_title: "Data Visualization: Storytelling"
+    space: "Data Analytics"
+    authority: "LinkedInLearning"
+    year: 2019
+    tags: 
+      - "data-visualization"
+  - 
+    course_title: "Programming Foundations: Fundamentals"
+    space: "Development"
+    authority: "LinkedInLearning"
+    tags: 
+      - "computer-science"
+      - "development"
+  - 
+    course_title: "Computer Science Principles: Digital Information"
+    space: "Development"
+    authority: "LinkedInLearning"
+    tags: 
+      - "computers-sciences"
+      - "principles"
+  - 
+    course_title: "Design Thinking: Data Intelligence"
+    space: "Design"
+    authority: "LinkedInLearning"
+    tags: 
+      - "design"
+  - 
+    course_title: "Graphic Design Foundations: Typography"
+    space: "Design"
+    authority: "LinkedInLearning"
+    tags: 
+      - "design"
+      - "foundations"
+      - "typography"
+      - "principles"
+  - 
+    course_title: "Learn API Documentation with JSON and XML"
+    space: "Development"
+    authority: "LinkedInLearning"
+    tags: 
+      - "api"
+      - "development"
+      - "computer-science"
+  - 
+    course_title: "Making User Experience Happen as a Team"
+    space: "Design"
+    authority: "LinkedInLearning"
+    tags: 
+      - "user-experience"
+      - "team"
+  - 
+    course_title: "Marketing Analytics: Setting and Measuring KPIs"
+    space: "Marketing"
+    authority: "LinkedInLearning"
+    tags: 
+      - "marketing-analytics"
+      - "data-analytics"
+      - "marketing"
+  - 
+    course_title: "Networking Foundations: Protocols and CLI Tools"
+    space: "Information Technology"
+    authority: "LinkedInLearning"
+    tags: 
+      - "networking"
+      - "i"
+  - 
+    course_title: "Online Marketing Foundations: Digital Marketing Research"
+    space: "Marketing"
+    authority: "LinkedInLearning"
+    tags: 
+      - "a"
+  - 
+    course_title: "Program Management Foundations"
+    space: "Management"
+    authority: "LinkedInLearning"
+    tags: 
+      - "a"
+  - 
+    course_title: "Programming Foundations: Data Structures"
+    space: "Development"
+    authority: "LinkedInLearning"
+    tags: 
+      - "a"
+  - 
+    course_title: "SEO: Link Building in Depth"
+    space: "Marketing"
+    authority: "LinkedInLearning"
+    tags: 
+      - "a"
+  - 
+    course_title: "Tooling with NPM Scripts"
+    space: "Development"
+    authority: "LinkedInLearning"
+    tags: 
+      - "a"
+  - 
+    course_title: "Programming Foundations: Software Quality Assurance"
+    space: "Development"
+    authority: "LinkedInLearning"
+    tags: 
+      - "a"
+  - 
+    course_title: "Understanding Information Architecture"
+    space: "Developement"
+    authority: "LinkedInLearning"
+    tags: 
+      - "a"
+  - 
+    course_title: "Learning REST APIs"
+    space: "Developement"
+    authority: "LinkedInLearning"
+    tags: 
+      - "a"
+  - 
+    course_title: "Building RESTful Web APIs with Node.js and Express"
+    space: "Developement"
+    authority: "LinkedInLearning"
+    tags: 
+      - "a"
+  - 
+    course_title: "Computer Science Principles: Programming"
+    space: "Developement"
+    authority: "LinkedInLearning"
+    tags: 
+      - "a"
+  - 
+    course_title: "Project Management Simplified"
+    space: "Management"
+    authority: "LinkedInLearning"
+    tags: 
+      - "a"
+  - 
+    course_title: "The Good Parts of JavaScript and the Web"
+    space: "Development"
+    authority: "LinkedInLearning"
+    tags: 
+      - "a"
+  - 
+    course_title: "Learning Data Science: Understanding the Basics"
+    space: "Data Analytics"
+    authority: "LinkedInLearning"
+    tags: 
+      - "a"
+  - 
+    course_title: "Learning FTP"
+    space: "Development"
+    authority: "LinkedInLearning"
+    tags: 
+      - "a"
+  - 
+    course_title: "Web Development Foundations: Full-Stack vs Front-End"
+    space: "Development"
+    authority: "LinkedInLearning"
+    tags: 
+      - "a"
+  - 
+    course_title: "Agile at Work: Planning with Agile User Stories"
+    space: "Management"
+    authority: "LinkedInLearning"
+    tags: 
+      - "a"
+

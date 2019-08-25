@@ -1,8 +1,8 @@
 {{ define "main" }}
 <main class="home space top-plus color-grey-l bg-color-a bottom-plus">
-  <header class="space top-plus">
+  <header class="space all-plus">
 
-    <div class="ui grid container">
+    <div class="ui grid">
       <div class="sixteen wide twelve wide large screen column">
         <h1 class="color-light">Hi, I'm Lucas.
           I use creativity and a love of problems to tell the stories of data.</h1>
@@ -24,7 +24,7 @@
           <div class="giga color-light">I am an aspiring data analyst and I really enjoy looking for and discovering insight and efficient solutions.</div>
           <div class="ui hidden divider"></div>
           <div>
-            <h3 class="color-dd">About</h3>
+            <h3 class="color-d">About</h3>
             <h5 class="">
                I have always been a problem solver. When I was young, I would deconstruct origami and figure out how a piece was made. This curiosity lead me to the study of maths because of the power of the tool. This same line of thought is what
               brought me to programming as code gives legs to any analysis.
@@ -35,7 +35,7 @@
       </div>
       <div class="row">
         <div class="eight wide large screen  column">
-          <h5 class="kill-margin color-dd">Code Is Life</h5>
+          <h5 class="kill-margin color-d">Code Is Life</h5>
           <h6 class="kill-margin">Real business challenges solved with a bit of code and a bit of grit!</h6>
           <div class="ui top attached tabular menu">
             <a class="active item">
@@ -48,11 +48,11 @@
           </div>
           <div class="ui bottom attached  segment">
             <div id="tab-one" class="show">
-              <h4 class="color-dd">Challenge</h4>
+              <h4 class="color-d">Challenge</h4>
               <p>
                 We were pulling analytics data from three data sources with inconsistent properties and data types. The previous solution was to manually clean and adjust properties with excel.
               </p>
-              <h4 class="color-dd">Solutions</h4>
+              <h4 class="color-d">Solutions</h4>
               <p>
                 Created a bit of script with python and pandas that cleaned and created homogenous properties and data types from each data source. Resulting in more accurate analysis and increased band width.
               </p>
@@ -61,14 +61,14 @@
               </p>
             </div>
             <div id="tab-two" class="">
-              <h4 class="color-dd">Challenge</h4>
+              <h4 class="color-d">Challenge</h4>
               <p>
 
 
                 We had a corse set of report that semi automated through excel functions. As the data sets we were working with were already pushing Excel upper bound. The macros were erroring out or dropped data.
 
               </p>
-              <h4 class="color-dd">Solutions</h4>
+              <h4 class="color-d">Solutions</h4>
               <p>
                 Consolidated three of our course Excel based reports into python and pandas. Reducing reporting time by 70%.
 
@@ -86,8 +86,35 @@
 
       </div>
   </section>
+  <section class="space all-plus">
+    
+      <div class="ui grid centered">
+          <div class="row">
+            <div class="eight wide large screen column ">
+                <h3 class=" peta space bottom-minus kill-margin color-d">Courses</h3>
+                <h5 class="color-d kill-margin">Recent courses completed in the data space</h4>
+                <div class="ui relaxed divided list">
+                    {{ range first 5 $.Site.Data.data_focus_course }}
+                    <div class="item">
+                      <i class="large graduation cap middle aligned icon"></i>
+                      <div class="content">
+                        <h6 class="color-grey-ll kill-margin">{{ .course_title }}</h6>
+                        <div class="description">Space: <strong>{{ .space }}</strong></div>
+                        <div class="description">Authority: <strong>{{ .authority }}</strong></div>
+                      </div>
+                    </div>
+                    {{end}}
+                  </div>
+            </div>
+          </div>
+        </div>
+    
+    
+ 
+  
+  </section>
   <section class="space all-plus bg-color-a " id="project">
-    <h3 class=" peta color-grey-l space bottom-minus kill-margin color-dd">Some Projects</h3>
+    <h3 class=" peta color-grey-l space bottom-minus kill-margin color-d">Some Projects</h3>
     <h4 class="color-grey-ll kill-margin">A Bit of Proof Of Technical Skill</h4>
     <div class="six wide column">
       <p class="color-grey-ll kill-margin space bottom">I am started picking up a python data analysis stack in April so the projects showcased are mostly from courses</p>

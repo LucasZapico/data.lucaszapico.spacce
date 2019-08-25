@@ -15,7 +15,7 @@
 }
 
 .color-dd {
-  color: darken($colord, 10%);
+  color: $colord;
 }
 
 .color-light {
@@ -31,11 +31,11 @@
 }
 
 .color-grey-ll {
-  color: $grey-l-2;
+  color: $grey-l-3;
 }
 
 .color-grey-m {
-  color: $grey-m-2;
+  color: $grey-m-1;
 }
 
 .color-grey-mm {
