@@ -35,7 +35,7 @@
       </div>
       <div class="row">
         <div class="eight wide large screen  column">
-          <h5 class="kill-margin color-d">Code Is Life</h5>
+          <h4 class="kill-margin color-d space top">Some code to make the world go around</h4>
           <h6 class="kill-margin">Real business challenges solved with a bit of code and a bit of grit!</h6>
           <div class="ui top attached tabular menu">
             <a class="active item">
@@ -86,27 +86,28 @@
 
       </div>
   </section>
-  <section>
-    <canvas id="courses"></canvas>
-  </section>
+ 
   <section class="space all-plus">
     
       <div class="ui grid centered">
           <div class="row">
             <div class="eight wide large screen column ">
                 <h3 class=" peta space bottom-minus kill-margin color-d">Courses</h3>
-                <h5 class="color-d kill-margin">Recent courses completed in the data space</h4>
+                <h5 class="color-d kill-margin">Recent courses completed in the data space</h5>
                 <div class="ui relaxed divided list">
                     {{ range first 5 $.Site.Data.data_focus_course }}
                     <div class="item">
                       <i class="large graduation cap middle aligned icon"></i>
                       <div class="content">
-                        <h6 class="color-grey-ll kill-margin">{{ .course_title }}</h6>
+                        <h6 class="color-light kill-margin">{{ .course_title }}</h6>
                         <div class="description">Space: <strong>{{ .space }}</strong></div>
                         <div class="description">Authority: <strong>{{ .authority }}</strong></div>
                       </div>
                     </div>
                     {{end}}
+                  </div>
+                  <div class="space top">
+                      <h5 class="color-d kill-margin">Even though I love learning just for the sake of it. What I love even more is when I set myself up to silidify that knowledge so it is readily available for me to solve challenges! <a class="link light" target="_blank" href="http://palace.lucaszapico.space">Checkout my working in progress knowledge palace to see how I attempt to do just that.</a></h5>
                   </div>
             </div>
           </div>
@@ -114,9 +115,9 @@
   </section>
   <section class="space all-plus bg-color-a " id="project">
     <h3 class=" peta color-grey-l space bottom-minus kill-margin color-d">Some Projects</h3>
-    <h4 class="color-grey-ll kill-margin">A Bit of Proof Of Technical Skill</h4>
+    <h4 class="color-d kill-margin">A Bit of Proof Of Technical Skill</h4>
     <div class="six wide column">
-      <p class="color-grey-ll kill-margin space bottom">I am started picking up a python data analysis stack in April so the projects showcased are mostly from courses</p>
+      <p class="color-d kill-margin space bottom">I am started picking up a python data analysis stack in April so the projects showcased are mostly from courses</p>
     </div>
     <div class="ui grid color-dark">
       {{ range .Site.Taxonomies.categories.project }}
