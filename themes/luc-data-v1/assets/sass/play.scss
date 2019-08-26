@@ -19,10 +19,15 @@ header {
 
 .home {
   .project {
+    height: 630px;
     a.ui.fluid.image {
       overflow: hidden;
-
+   
+      
       img {
+        width: 550px;
+        height: 300px;
+        object-fit: contain;
         transition: all ease-in-out 0.2s;
         transform: scale(1);
       }
@@ -31,7 +36,7 @@ header {
 
     .ui.header.h3.attached {
       transition: all ease-in-out 0.2s;
-      background-color: darken($colord, 10%);
+      background-color: $colord;
 
       a {
         color: $light;

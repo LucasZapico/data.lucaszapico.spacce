@@ -125,17 +125,18 @@
           <h3 class="header h3 top attached ui bg-color-d color-light"> <a class="" href=" {{ .RelPermalink }}">{{ .Title }}</a></h3>
           <div class=" ui attached segment">
             <a href="{{ .RelPermalink }}" class="ui fluid image">
-              <img src="{{ .Page.Params.Img }}">
+              <img alt="data viz graphic" src="{{ .Page.Params.Img }}" >
             </a>
-            <p>{{.Summary}} </p>
-            {{ if .Truncated }}
+            <p class="space bottom" >{{.Summary}} </p>
+            
+          </div>
+          {{ if .Truncated }}
             <!-- This <div> includes a read more link, but only if the summary is truncated... -->
-            <div>
-              <a class="btn dft" href="{{ .RelPermalink }}">Read More…</a>
+            <div class="btn dft ui segment attached">
+              <a class="color-light" href="{{ .RelPermalink }}">See the steps in code</a>
             </div>
 
             {{ end }}
-          </div>
         </div>
       </div>
       {{end}}
