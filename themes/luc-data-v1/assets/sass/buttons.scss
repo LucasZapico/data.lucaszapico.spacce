@@ -53,26 +53,29 @@ $sec-btn-text: $colord;
   position: relative;
   z-index: 2;
   transition: all 0.2s ease-in-out;
+  cursor: pointer;
 
   &.dark {
+    color: $colord;
+    border-bottom: $colord solid 5px;
     &:before {}
   }
 
   &.light {
     color: $light;
+    border-bottom: $colord solid 5px;
 
-    &:before {
-      z-index: -2;
-      position: absolute;
-      content: "";
-      height: 10px;
-      width: 100%;
-      bottom: -15px;
-      right: 0;
-      background: darken($colord, 10%);
-      transition: all 0.2s ease-in-out;
-
-    }
+    // &:before {
+    //   z-index: -2;
+    //   position: absolute;
+    //   content: "";
+    //   height: 10px;
+    //   width: 100%;
+    //   bottom: -15px;
+    //   right: 0;
+    //   background: darken($colord, 10%);
+    //   transition: all 0.2s ease-in-out;
+    // }
 
     &:hover {
       &:before {
