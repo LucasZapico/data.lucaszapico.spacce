@@ -129,13 +129,13 @@
               <img alt="data viz graphic" src="{{ .Page.Params.Img }}" >
             </a>
             <p class="space bottom" >{{.Summary}} </p>
+            <a class="btn dft " href="{{ .RelPermalink }}">See the steps in code</a>
             
           </div>
           {{ if .Truncated }}
             <!-- This <div> includes a read more link, but only if the summary is truncated... -->
-            <div class="btn dft ui segment attached">
-              <a class="color-light" href="{{ .RelPermalink }}">See the steps in code</a>
-            </div>
+            
+            
 
             {{ end }}
         </div>

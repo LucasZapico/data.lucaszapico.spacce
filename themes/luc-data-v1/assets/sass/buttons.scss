@@ -58,13 +58,20 @@ $sec-btn-text: $colord;
   &.dark {
     color: $colord;
     border-bottom: $colord solid 5px;
+    &:focus, :hover {
+      border-bottom: $light solid 5px;
+    } 
     &:before {}
+   
+
   }
 
   &.light {
     color: $light;
     border-bottom: $colord solid 5px;
-
+    &:hover, :focus {
+      border-bottom: $light solid 5px;
+    }
     // &:before {
     //   z-index: -2;
     //   position: absolute;
