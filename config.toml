@@ -5,7 +5,7 @@ theme  = "luc-data-v1"
 summaryLength = 40
 # Main Menu
 #disqusShortname = "username" # delete this to disable disqus comments
-googleAnalytics = ""
+googleAnalytics = "UA-118288221-3"
 
 [params]
     author = "Lucas "
