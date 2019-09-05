@@ -14,13 +14,15 @@
       </div>
     </div>
     <div class="ui grid centered">
+ 
       <canvas id="canvas" width="700" height="700"></canvas>
+ 
     </div>
   </header>
   <section class="bg-color-a space all-plus" id="about" href="/#about">
     <div class="ui grid centered">
       <div class="row">
-        <div class="eight wide large screen column ">
+        <div class="sixteen wide eight wide large screen column ">
           <div class="giga color-light">I am an aspiring data analyst and I really enjoy looking for and discovering insight and efficient solutions.</div>
           <div class="ui hidden divider"></div>
           <div>
@@ -34,7 +36,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="eight wide large screen  column">
+        <div class="sixteen wide eight wide large screen  column">
           <h4 class="kill-margin color-d space top">Some code to make the world go around</h4>
           <h6 class="kill-margin">Real business challenges solved with a bit of code and a bit of grit!</h6>
           <div class="ui top attached tabular menu">
@@ -91,7 +93,7 @@
     
       <div class="ui grid centered">
           <div class="row">
-            <div class="eight wide large screen column ">
+            <div class=" sixteen wide eight wide large screen column ">
                 <h3 class=" peta space bottom-minus kill-margin color-d">Courses</h3>
                 <h5 class="color-d kill-margin">Recent courses completed in the data space</h5>
                 <div class="ui relaxed divided list">
@@ -121,7 +123,7 @@
     </div>
     <div class="ui grid color-dark">
       {{ range .Site.Taxonomies.categories.project }}
-      <div class="eight wide column">
+      <div class="sixteen wide eight wide large screen column">
         <div class="project">
           <h3 class="header h3 top attached ui bg-color-d color-light"> <a class="" href=" {{ .RelPermalink }}">{{ .Title }}</a></h3>
           <div class=" ui attached segment">
@@ -147,10 +149,10 @@
 
   <section class="space bottom-plus top-plus bg-light">
     <div class="ui grid centered">
-      <div class="row">
+      <div class="row large screen only">
         <canvas id="radar" width="600" heigh="600"></canvas>
       </div>
-      <div class="row four">
+      <div class="row four large screen only">
         <div class="column">Beginner</div>
         <div class="column">Competent</div>
         <div class="column">Proficient</div>
@@ -160,8 +162,11 @@
     </div>
   </section>
   <section>
-
-
+      <div class="ui grid centered">
+          <div class="row">
+            <canvas id="courses" width="900" heigh="900"></canvas>
+          </div>
+        </div>
   </section>
 </main>
 {{ end }}

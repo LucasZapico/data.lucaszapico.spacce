@@ -89,15 +89,9 @@ window.onload = function() {
       }
     }
   });
-  circlePack()
-  function circlePack(){
-    console.log("circlePack")
-    d3.json('/data_focus_course.json').then(function(data){
-      console.log(data[0])  
-    })
-        
-    
-  }
+
+
+  
 
   // D3 Module
   var graph = {

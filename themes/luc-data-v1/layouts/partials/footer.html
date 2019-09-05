@@ -1,7 +1,7 @@
 <footer class="top-plus space bottom">
-  <div class="ui  grid container">
-    <div class="row four column">
-      <div class="column">
+  <div class="row">
+    <div class="ui grid container">
+      <div class="eight wide four wide large column">
         <div class="ui vertical text menu">
           <div class="header item">Data.Lucas</div>
           {{ range .Site.Menus.main }}
@@ -10,28 +10,36 @@
           </a>
           {{end}}
         </div>
-
-
       </div>
-      <div class="column">
-        <p>Wow, impressive to have made it this far. I would give you a <i class="star outline icon"></i> if I could. But, a <i class="smile icon"></i> will have to do. Thanks for checking out my developing data portfolio. <a class="link dark" href="https://github.com/LucasZapico/data.lucaszapico.spacce" target="_blank">Here is the code under the hood if that is your thing.</a> or you can check out my <a class="link dark" href="data-port-plan" >road map</a> for this site.</p>
+      <div class="eight wide four wide large column">
+        <p>Wow, impressive to have made it this far. I would give you a <i class="star outline icon"></i> if I could.
+          But, a <i class="smile icon"></i> will have to do. Thanks for checking out my developing data portfolio. <a
+            class="link dark" href="https://github.com/LucasZapico/data.lucaszapico.spacce" target="_blank">Here is the
+            code under the hood if that is your thing.</a> or you can check out my <a class="link dark"
+            href="data-port-plan">road map</a> for this site.</p>
       </div>
-      <div class="column"></div>
-      <div class="column"> <a href="https://www.linkedin.com/in/lucasmmzapico/"><i class="linkedin large icon"></i></a>
-        <a href="https://github.com/LucasZapico"><i class="github large icon"></i></a></div>
+      <div class="eight wide four wide large column"></div>
+      <div class="eight wide four wide large column">
+        <a href="https://www.linkedin.com/in/lucasmmzapico/"><i class="linkedin large icon"></i></a>
+        <a href="https://github.com/LucasZapico"><i class="github large icon"></i></a>
+      </div>
     </div>
-    <div class="row two column">
-
-      <div class="column">
-        Last Change
-        {{ .Site.LastChange }}
+    <div class="row">
+      <div class="ui grid container">
+        <div class="eight wide column">
+          Last Change
+          {{ .Site.LastChange }}
+        </div>
+        <div class="column eight wide floated right">
+          <div class="ui grey small header"> Data.LucasZapico.Space was designed and build by Lucas Zapico 2019 with a
+            little help from <a href="https://gohugo.io">Hugo</a> and <a href="https://semantic-ui.com">Semantic ui</a>
+          </div>
+        </div>
+        
       </div>
-      <div class="column floated right">
-        <div class="ui grey small header"> Data.LucasZapico.Space was designed and build by Lucas Zapico 2019 with a little help from <a href="https://gohugo.io">Hugo</a> and <a href="https://semantic-ui.com">Semantic ui</a></div>
-      </div>
-      <div class="column"></div>
     </div>
-  </div>
+
+
 
 </footer>
 <script src="https://unpkg.com/ionicons@4.2.2/dist/ionicons.js"></script>
