@@ -13,7 +13,7 @@ enableRobotsTXT = "True"
     description = "Data Portfolio for Lucas Zapico"
     githubUsername = "LucasZapico"
     favicon = "img/favicon-32x32.ico"
-    images = ["img/site-feature-image.png"]
+    images = ["https://data.lucaszapico.space/img/site-feature-image.png"]
     title = "Data.Lucas"
 
 
