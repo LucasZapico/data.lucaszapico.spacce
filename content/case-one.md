@@ -6,9 +6,9 @@ categories: ["case"]
 ---
 
 
+-   Data presentation
 -   Data acquistion
 -   Data manipulation
--   Data presentation
 
 Over the past half a year I found myself in a ideal learning enviroment. Working with marketing data on a developing team. It is almost a law at this point that the digital space moves at breakneck speed. Leading to heaps of jargan, processes and methods for driving toward the equalibrium between stability to build and change in order to stay competitive.
 The processes in the marketing space are no different. I found myself in a mix of old, new, and some down right ugly processes and a heap of techical and business constraints. The first step in my process is to emerse myself in  a system, wonder anound abit. A little curiosity, letting my nose guide me. Asking questions when the questions were knocking.

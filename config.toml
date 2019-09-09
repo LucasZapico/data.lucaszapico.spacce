@@ -6,6 +6,7 @@ summaryLength = 40
 # Main Menu
 #disqusShortname = "username" # delete this to disable disqus comments
 googleAnalytics = "UA-118288221-3"
+enableRobotsTXT = "True"
 
 [params]
     author = "Lucas "
