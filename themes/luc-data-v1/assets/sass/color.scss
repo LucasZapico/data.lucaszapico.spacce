@@ -1,7 +1,7 @@
 $colora: #407088;
 $colorb: #9fd3c7; //#348498;
 $colorc: #6d3939;
-$colord: darken(#293462,10%);
+$colord: #1a213e;
 $colore: #ffcbcb;
 $colorf: ffb5b5;
 
@@ -33,8 +33,14 @@ $grey-d-3: #33332B;
   background-color: $colord;
 }
 
-.bg-color-dd {
-  background-color: darken($colord,10%);
+// .bg-color-dd {
+//   background-color: darken($colord,10%);
+// }
+
+
+.bg-color-q {
+  // background-color: #293461;
+  background-color: green;
 }
 
 .bg-color-e {
